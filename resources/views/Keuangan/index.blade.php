@@ -7,7 +7,29 @@
     <div class="container">
         <div class="row">
             <div class="col-10">
-                <h1 class="mt-2">Hello, world!</h1>
+                <h1 class="mt-2">Status Keuangan</h1>
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nama Project</th>
+                        <th scope="col">Jenis Kerjaan</th>
+                        <th scope="col">Waktu Tenggat Kerjaan</th>
+                        <th scope="col">Biaya</th>
+                        <th scope="col">Karyawan</th>
+                        <th scope="col">Progress Kerjaan</th>
+                    </tr>
+                    <tbody>
+                    <tr>
+                    <th scope='row'>PROJECT 1</th>
+                    <td>JENIS 1</td>
+                    <td>WAKTU 1</td>
+                    <td>Rp.000,00</td>
+                    <td>IMAGE123</td>
+                    <td>BARPROGRESS1</td>
+                    </tr>
+                    </tbody>
+                    </thead>
+                </table>
                </div>
             </div>
         </div>
