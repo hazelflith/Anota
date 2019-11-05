@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -10,7 +11,8 @@ class OrderController extends Controller
     public function index()
     {
         $nama = $this->nama;
-        return view('order.index',['nama' => $nama]);
+        $orders = \App\Order::all();
+        return view('order.index',['nama' => $nama],['orders'=> $orders]);
     }
 
     /**

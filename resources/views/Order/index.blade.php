@@ -11,6 +11,7 @@
                 <table class="table">
                     <thead class="thead-dark">
                     <tr>
+                        <th scope="col">No.</th>
                         <th scope="col">Nama Project</th>
                         <th scope="col">Jenis Kerjaan</th>
                         <th scope="col">Waktu Tenggat Kerjaan</th>
@@ -19,14 +20,17 @@
                         <th scope="col">Progress Kerjaan</th>
                     </tr>
                     <tbody>
-                    <tr>
-                    <th scope='row'>PROJECT 1</th>
-                    <td>JENIS 1</td>
-                    <td>WAKTU 1</td>
-                    <td>Rp.000,00</td>
-                    <td>IMAGE123</td>
-                    <td>BARPROGRESS1</td>
-                    </tr>
+                    @foreach ($orders as $ord)
+                        <tr>
+                            <th scope='row'>{{$loop -> iteration}}</th>
+                            <td>{{$ord ->namaproject}}</td>
+                            <td>{{$ord ->jeniskerjaan}}</td>
+                            <td>{{$ord ->waktu}}</td>
+                            <td>Rp.{{$ord ->biaya}}</td>
+                            <td>{{$ord ->karyawan}}</td>
+                            <td>{{$ord ->progress}}%</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                     </thead>
                 </table>
