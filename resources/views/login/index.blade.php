@@ -36,14 +36,17 @@
 <body class="text-center" background="/assets/bg/login/background.png">
 <div class="col-md-12" style="background:url(/assets/bg/login/Exclusion.png); height: 700px; background-size: 700px; background-repeat: no-repeat; background-position: center;">
   <form class="form-signin">
-          <div class="h1 font-weight-normal"style="padding-top: 30px; margin-bottom: 0px; font-size:90px;">Anota</div>
-          <div class="h5 mb-3 font-weight-normal" style="font-size:25px;">Asisten Notaris Anda</div>
-          <div class="align-left"><img src="/assets/bg/login/login.png" style="height: auto; width: 75px;"></div>
-          <div class="align-left mb-2 font-weight-normal"style="font-size: 15px;">Masukkan Identitas Anda Untuk Melanjutkan</div>
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          <div class="h1 font-weight-normal title">Anota
+            <div class="h5 mb-3 font-weight-normal subtitle">Asisten Notaris Anda</div>
+          </div>
+          <div class="align-left"><img class="logintext" src="/assets/bg/login/login.png"></div>
+          <div class="align-left mb-4 font-weight-normal"style="font-size: 15px;">Masukkan Identitas Anda Untuk Melanjutkan</div>
+          <label for="inputEmail" class="sr-only">Username</label>
+          <div class="align-left"><img src="/assets/bg/login/username.png "style="height=45px;width:45px">
+            <input type="email" id="inputEmail" class="form-control custom-form" placeholder="Username" required autofocus></div>
           <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <div class="align-left"><img src="/assets/bg/login/password.png "style="height=45px;width:45px">
+            <input type="password" id="inputPassword" class="form-control custom-form" placeholder="Password" required></div>
           <div class="checkbox mb-3">
               <label style="margin-right: 170px;">
               <input type="checkbox" value="remember-me"> Remember me

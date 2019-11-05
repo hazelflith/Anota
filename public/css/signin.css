@@ -66,3 +66,28 @@ body {
 .align-left {
   text-align: left!important;
 }
+.logintext {
+  height: auto;
+  width: 75px; 
+  margin-top:40px;
+}
+.subtitle {
+  font-size:27px; 
+  color : #B6B6B6;
+}
+.title {
+  padding-top: 50px; 
+  margin-bottom: 0px; 
+  font-size:90px; 
+  color:#919191;
+  display:block;
+  line-height: 70px;
+}
+.custom-form {
+  width:80%;
+  display: inline-block;
+  vertical-align: top;
+}
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
