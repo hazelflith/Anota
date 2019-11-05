@@ -42,3 +42,27 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.btn-2 {
+  background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+}
+.btn {
+  flex: 1 1 auto;
+  margin: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 180px;
+  margin-right: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2); */
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+.align-left {
+  text-align: left!important;
+}
