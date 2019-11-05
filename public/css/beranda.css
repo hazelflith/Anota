@@ -1,0 +1,42 @@
+.subtitle {
+  font-size:55px; 
+  color : #B6B6B6;
+}
+.title {
+  padding-top: 50px;
+  margin-left:30px;
+  margin-bottom: 0px; 
+  font-size:170px; 
+  color:#919191;
+  line-height: 140px;
+}
+.center {
+    position: absolute;
+    top: 25%;
+    left: 7%;
+  }
+.align-left {
+    text-align: left!important;
+  }
+.div-flex{
+    display:flex;
+  }
+.div-left{
+    flex: 0 0 40%;
+  }
+  .div-right{
+      flex: 1;
+  }
+.container-a{
+    height: 178px;
+    width: 670px;
+    object-fit: fill;
+    display: inline-block;
+    
+}
+.container-b {
+    height: 178px;
+    width: 670px;
+    object-fit: fill;
+    display: inline-block;
+}

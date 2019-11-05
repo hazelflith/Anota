@@ -4,13 +4,19 @@
 @section('status1', 'color:#FF8787')
 
 @section('container')
-    <div class="container">
-        <div class="row">
-            <div class="col-10">
-                <h1 class="mt-2">Hello, world!</h1>
-               </div>
-            </div>
+<link href="/css/beranda.css" rel="stylesheet">
+    <div class="col-md-12 div-flex center">
+        <div class="align-left div-left">
+            <div class="h1 font-weight-normal title">Anota</div>
+            <div class="h5 mb-3 font-weight-normal subtitle">Asisten Notaris Anda</div>
         </div>
+        <div class="div-right">
+            <div><img class="container-a" src="/assets/bg/home/container.png"></div>
+            <div><img class="container-b" src="/assets/bg/home/container.png"></div>
+        </div>
+        
+    </div>
+    </div>
 @endsection
 
     <!-- Optional JavaScript -->
