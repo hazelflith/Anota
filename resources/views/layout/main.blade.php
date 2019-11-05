@@ -10,8 +10,7 @@
 
     <title>@yield('title')</title>
   </head>
-  <body>
-
+  <body background="/assets/bg/background.png">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
         <a class="navbar-brand" href="/user" style="@yield('status0')">
@@ -22,7 +21,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link"style="@yield('status1')" href="/">Beranda </a>
+            <a class="nav-item nav-link"style="@yield('status1')" href="/home">Beranda </a>
             <a class="nav-item nav-link"style="@yield('status2')"href="/order">Order</a>
             <a class="nav-item nav-link"style="@yield('status3')"href="/karyawan">Karyawan</a>
             <a class="nav-item nav-link"style="@yield('status4')"href="/keuangan">Keuangan</a>
