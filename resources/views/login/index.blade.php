@@ -34,20 +34,24 @@
     <link href="/css/signin.css" rel="stylesheet">
 
 <body class="text-center" background="/assets/bg/login/background.png">
-    <form class="form-signin">
-  <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" onclick="window.location.href='\home'" type="submit">Sign in </button>
-  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
-</form>
+<div class="col-md-12" style="background:url(/assets/bg/login/Exclusion.png); height: 700px; background-size: 700px; background-repeat: no-repeat; background-position: center;">
+  <form class="form-signin">
+          <h1 class="h1 mb-3 font-weight-normal"style="padding-top: 120px;">Anota</h1>
+          <h1 class="h3 mb-3 font-weight-normal">Asisten Notaris Anda</h1>
+          <h1 class="h4 mb-3 font-weight-normal">Please sign in</h1>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <div class="checkbox mb-3">
+              <label>
+              <input type="checkbox" value="remember-me"> Remember me
+              </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" onclick="window.location.href='\home'" type="submit">Sign in </button>
+          <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+      </form>
+</div>
+    
 </body>
 </html>
