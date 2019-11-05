@@ -51,7 +51,7 @@
               <label style="margin-right: 170px;">
               <input type="checkbox" value="remember-me"> Remember me
               </label>
-              <div class="h8"style="margin-right: 70px;">Lupa Password ?<a href="url"> Hubungi Kami</a></div> 
+              <div class="h8"style="margin-right: 70px;">Lupa Password ?   <a href="url">Hubungi Kami</a></div> 
           </div>
           <button class="btn btn-2" onclick="window.location.href='\home'" type="submit">Sign in </button>
           <p class="mt-5 mb-3 text-muted">&copy; Anota 2019</p>
