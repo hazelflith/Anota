@@ -1,5 +1,6 @@
 # Anota (Asisten Notaris Anda)
-
+Sebuah aplikasi untuk memudahkan para notaris di Indonesia dalam mengatur urusan perkantorannya, baik dari segi administrasi pekerjaan,
+karyawan, sampai ke keuangan ada di dalam aplikasi ini.
 # Latar Belakang
 Bekerja menjadi seorang notaris bukanlah hal yang mudah, seorang notaris
 sangat memerlukan ketelitian dan kecakapan dalam mengatur arsip dan mengelola
@@ -20,15 +21,7 @@ yang akan dijadikan bahan penelitian sebagai berikut :
 
 # Maksud dan Tujuan
 
-Maksud dan tujuan aplikasi ini adalah untuk membantu para notaris dalam
-mengatur administrasi dan mengatur keuangannya, serta untuk memenuhi tugas
-praktikum Rekayasa Perangkat Lunak. Disamping untuk memenuhi tugas perkuliahan
-Rekayasa Perangkat Lunak, kami membuat program ini juga karena request dari salah
-satu orang tua anggota kami yang merupakan seorang notaris juga dan meminta untuk
-dibuatkan program. Di Indonesia pun masih belum ada program management yang baik
-untuk para notaris dan bekerja secara digital serta online untuk menyimpan data-
-datanya. Maka dari itu tersedialah sebuah lahan bisnis yang sangat besar bagi kami
-untuk memasarkan program ini kepada seluruh notaris di Indonesia.
+Maksud dan tujuan aplikasi ini adalah untuk membantu para notaris dalam mengatur administrasi dan mengatur keuangannya, serta untuk memenuhi tugas praktikum Rekayasa Perangkat Lunak. Disamping untuk memenuhi tugas perkuliahan Rekayasa Perangkat Lunak, kami membuat program ini juga karena request dari salah satu orang tua anggota kami yang merupakan seorang notaris juga dan meminta untuk dibuatkan program. Di Indonesia pun masih belum ada program management yang baik untuk para notaris dan bekerja secara digital serta online untuk menyimpan data-datanya. Maka dari itu tersedialah sebuah lahan bisnis yang sangat besar bagi kami untuk memasarkan program ini kepada seluruh notaris di Indonesia.
 
 # MANFAAT
 - Membantu para notaris dalam mengatur arsip-arsip dan progress pekerjaan
