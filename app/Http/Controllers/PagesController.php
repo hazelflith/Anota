@@ -37,4 +37,9 @@ class PagesController extends Controller
         $nama = $this->nama;
         return view('user', ['nama' => $nama]);
     }
+
+    public function login()
+    {
+        return view('auth.login');
+    }
 }
