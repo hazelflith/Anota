@@ -12,12 +12,10 @@
 */
 
 Route::get('/','PagesController@login');
-Route::get('/home','PagesController@beranda');
+Route::get('/beranda','PagesController@beranda');
 Route::get('/order','OrderController@index');
 Route::get('/karyawan','KaryawanController@index');
 Route::get('/keuangan','KeuanganController@index');
 Route::get('/akta','PagesController@akta');
 Route::get('/user','PagesController@user');
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
