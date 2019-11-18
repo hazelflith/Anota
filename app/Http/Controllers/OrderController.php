@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    /**
+     * Create a new controller instance. Page hanya bisa diakses ketika sudah login
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public $nama = 'Harris P';
     public function index()
     {

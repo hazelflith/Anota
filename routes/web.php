@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/','PagesController@login');
-Route::get('/beranda','PagesController@beranda');
+Route::get('/','HomeController@beranda')->name('default');
 Route::get('/order','OrderController@index');
 Route::get('/karyawan','KaryawanController@index');
 Route::get('/keuangan','KeuanganController@index');

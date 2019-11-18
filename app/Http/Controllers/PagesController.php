@@ -4,42 +4,44 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\User;
+
 class PagesController extends Controller
 {
-    public $nama = 'Harris P';
-    public function beranda()
+    /**
+     * Create a new controller instance. Page hanya bisa diakses ketika sudah login
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        $nama = $this->nama;
-        return view('index', ['nama' => $nama]);
+        $this->middleware('auth');
     }
+    
     public function order()
     {
-        $nama = $this->nama;
-        return view('order', ['nama' => $nama]);
+        return view('order');
     }
     public function karyawan()
     {
-        $nama = $this->nama;
-        return view('karyawan', ['nama' => $nama]);
+        return view('karyawan');
     }
     public function keuangan()
     {
-        $nama = $this->nama;
-        return view('keuangan', ['nama' => $nama]);
+        return view('keuangan');
     }
     public function akta()
     {
-        $nama = $this->nama;
-        return view('akta', ['nama' => $nama]);
+        return view('akta');
     }
     public function user()
     {
-        $nama = $this->nama;
-        return view('user', ['nama' => $nama]);
+        return view('user');
     }
 
     public function login()
     {
-        return view('auth.login');
+        
+        
+        
     }
 }

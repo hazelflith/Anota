@@ -31,14 +31,14 @@
             @csrf
         </form>
         <!-- end logout button -->
-        
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link"style="@yield('status1')" href="/home">Beranda </a>
+            <a class="nav-item nav-link"style="@yield('status1')" href="/">Beranda </a>
             <a class="nav-item nav-link"style="@yield('status2')"href="/order">Order</a>
             <a class="nav-item nav-link"style="@yield('status3')"href="/karyawan">Karyawan</a>
             <a class="nav-item nav-link"style="@yield('status4')"href="/keuangan">Keuangan</a>
