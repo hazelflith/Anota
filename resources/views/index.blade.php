@@ -8,7 +8,7 @@
     <div class="col-md-12 div-flex center">
         <div class="align-left div-left">
             <div class="h1 font-weight-normal title">Anota</div>
-            <div class="h5 mb-3 font-weight-normal subtitle">Asisten Notaris Anda</div>
+            <div class="h5 font-weight-normal subtitle">Asisten Notaris Anda</div>
         </div>
         <div class="div-right">
             <div><img class="container-a" src="/assets/bg/home/container.png"></div>

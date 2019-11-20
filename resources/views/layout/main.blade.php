@@ -18,20 +18,8 @@
     <div class="container">
         <a class="navbar-brand" href="/user" style="@yield('status0')">
         <img src="/assets/img/userlogo.png" width="35" height="35" style="margin-right:15px" class="d-inline-block align-top" alt="">
-        {{ Auth::user()->name }}</a>
-
-        <!-- logout button -->
-        <a class="dropdown-item" href="{{ route('logout') }}"
-          onclick="event.preventDefault();
-          document.getElementById('logout-form').submit();">
-          {{ __('Logout') }}
+        {{ Auth::user()->name }}
         </a>
-
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
-        <!-- end logout button -->
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,6 +31,19 @@
             <a class="nav-item nav-link"style="@yield('status3')"href="/karyawan">Karyawan</a>
             <a class="nav-item nav-link"style="@yield('status4')"href="/keuangan">Keuangan</a>
             <a class="nav-item nav-link"style="@yield('status5')"href="/akta">Akta</a>
+             <!-- logout button -->
+        <a  class="nav-item nav-link" href="{{ route('logout') }}"
+          onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();" style="margin-right:30px">
+          {{ __('Logout') }}
+          <img src="/assets/img/logout.svg" width="18" height="18" style="margin-right:15px" alt="">
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        <!-- end logout button -->
+
     </div>
   </div>
   </div>

@@ -8,7 +8,7 @@
   margin-bottom: 0px; 
   font-size:170px; 
   color:#919191;
-  line-height: 140px;
+  line-height: 70%;
 }
 .center {
     position: absolute;
@@ -29,14 +29,14 @@
   }
 .container-a{
     height: 178px;
-    width: 670px;
+    width: 75%;
     object-fit: fill;
     display: inline-block;
     
 }
 .container-b {
     height: 178px;
-    width: 670px;
+    width: 75%;
     object-fit: fill;
     display: inline-block;
 }

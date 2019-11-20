@@ -34,7 +34,7 @@
     <link href="/css/signin.css" rel="stylesheet">
 
   <body class="text-center" background="/assets/bg/login/background.png">
-    <div class="col-md-12" style="background:url(/assets/bg/login/Exclusion.png); height: 700px; background-size: 700px; background-repeat: no-repeat; background-position: center;">
+    <div class="col-md-12" style="background:url(/assets/bg/login/Exclusion.png);max-width: 100%; height: 700px; background-size: 700px; background-repeat: no-repeat; background-position: center;">
       <form class="form-signin" action="{{ route('login') }}" method="POST">
       @csrf
         <div class="h1 font-weight-normal title">Anota
