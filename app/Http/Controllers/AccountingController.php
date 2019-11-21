@@ -3,24 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Order;
+use App\Accounting;
 
-class OrderController extends Controller
+class AccountingController extends Controller
 {
     /**
-     * Create a new controller instance. Page hanya bisa diakses ketika sudah login
+     * Display a listing of the resource.
      *
-     * @return void
+     * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     public function index()
     {
-        $orders = Order::all();
-        return view('order.index',['nama' => $nama],['orders'=> $orders]);
+        //
     }
 
     /**
