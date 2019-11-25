@@ -12,9 +12,12 @@
 */
 
 Route::get('/','HomeController@beranda')->name('default');
-Route::get('/order','OrderController@index');
 Route::get('/karyawan','KaryawanController@index');
 Route::get('/keuangan','KeuanganController@index');
 Route::get('/akta','PagesController@akta');
 Route::get('/user','PagesController@user');
 Auth::routes();
+
+//order
+Route::get('/order','OrderController@index');
+Route::get('/order/create','OrderController@create');

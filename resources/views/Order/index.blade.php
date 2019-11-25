@@ -7,7 +7,11 @@
     <div class="container">
         <div class="row">
             <div class="col-10">
-                <h1 class="mt-2">Orderan Anda</h1>
+                <div class="row justify-content-between">
+                    <div class="col-4"><h1 class="mt-2">Orderan Anda</h1></div>
+                    <div class="col-4"><a href="order/create" style="float:right" class="mt-2 btn btn-primary">Input</a></div>
+                </div>
+
                 <table class="table">
                     <thead class="thead-dark">
                     <tr>
@@ -20,15 +24,15 @@
                         <th scope="col">Progress Kerjaan</th>
                     </tr>
                     <tbody>
-                    @foreach ($orders as $ord)
+                    @foreach ($orders as $order)
                         <tr>
                             <th scope='row'>{{$loop -> iteration}}</th>
-                            <td>{{$ord ->namaproject}}</td>
-                            <td>{{$ord ->jeniskerjaan}}</td>
-                            <td>{{$ord ->waktu}}</td>
-                            <td>Rp.{{$ord ->biaya}}</td>
-                            <td>{{$ord ->karyawan}}</td>
-                            <td>{{$ord ->progress}}%</td>
+                            <td>{{$order ->namaproject}}</td>
+                            <td>{{$order ->jeniskerjaan}}</td>
+                            <td>{{$order ->waktu}}</td>
+                            <td>Rp.{{$order ->biaya}}</td>
+                            <td>{{$order ->karyawan}}</td>
+                            <td>{{$order ->progress}}%</td>
                         </tr>
                     @endforeach
                     </tbody>

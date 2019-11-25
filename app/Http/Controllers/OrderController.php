@@ -20,7 +20,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-        return view('order.index',['nama' => $nama],['orders'=> $orders]);
+        return view('order.index',['orders'=> $orders]);
     }
 
     /**
@@ -30,7 +30,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        return view('order.create');
     }
 
     /**
