@@ -14,9 +14,8 @@ class CreateKaryawansTable extends Migration
     public function up()
     {
         Schema::create('karyawans', function (Blueprint $table) {
-            $table->string('idKaryawan');                      
-            $table->primary('idKaryawan');                      
-            $table->string('idOrder');
+            $table->bigIncrements('idKaryawan');                                          
+            $table->bigInteger('idOrder')->unsigned();
             $table->foreign('idOrder')->references('idOrder')->on('orders');
             $table->string('namaKaryawan');
             $table->string('emailKaryawan');

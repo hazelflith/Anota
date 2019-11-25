@@ -14,10 +14,10 @@ class CreateProgressKaryawansTable extends Migration
     public function up()
     {
         Schema::create('progress_karyawans', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->string('idKaryawan');
+            $table->bigIncrements('id');
+            $table->bigInteger('idKaryawan')->unsigned();
             $table->foreign('idKaryawan')->references('idKaryawan')->on('karyawans');
-            $table->string('idOrder');
+            $table->bigInteger('idOrder')->unsigned();
             $table->foreign('idOrder')->references('idOrder')->on('orders');
             $table->date('deadlineKaryawan');
             $table->string('statusKerjaan');

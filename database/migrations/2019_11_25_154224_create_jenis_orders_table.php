@@ -14,8 +14,8 @@ class CreateJenisOrdersTable extends Migration
     public function up()
     {
         Schema::create('jenis_orders', function (Blueprint $table) {
-            $table->Increments('idJenisOrder');
             $table->string('jenisOrder');
+            $table->primary('jenisOrder');
             $table->timestamps();
         });
     }

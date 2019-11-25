@@ -14,8 +14,8 @@ class CreateAccountingsTable extends Migration
     public function up()
     {
         Schema::create('accountings', function (Blueprint $table) {
-            $table->Increments('idAccounting');
-            $table->string('idOrder');
+            $table->bigIncrements('idAccounting');
+            $table->bigInteger('idOrder')->unsigned();
             $table->foreign('idOrder')->references('idOrder')->on('orders');
             $table->integer('priceOrder');
             $table->integer('biayaMasuk');

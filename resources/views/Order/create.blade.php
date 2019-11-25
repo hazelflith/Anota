@@ -20,16 +20,20 @@
                 <input type="text" name="namaOrder" class="form-control" id="namaOrder">
             </div>
             <div class="form-group col-4">
-                <label for="deadlineOrder">Jenis Kerjaan</label>
-                <input type="date" name="deadlineOrder" class="form-control" id="deadlineOrder">
+                <label for="jenisOrder">Jenis Kerjaan</label>
+                <input type="text" name="jenisOrder" class="form-control" id="jenisOrder">
             </div>
             <div class="form-group col-4">
                 <label for="deadlineOrder">Waktu Tenggat</label>
                 <input type="date" name="deadlineOrder" class="form-control" id="deadlineOrder">
             </div>
             <div class="form-group col-4">
-                <label for="biaya">Biaya</label>
-                <input type="text" name ="biaya" class="form-control" id="biaya">
+                <label for="priceOrder">Biaya</label>
+                <input type="text" name ="priceOrder" class="form-control" id="priceOrder">
+            </div>
+            <div class="form-group col-4">
+                <label for="karyawanPekerjaOrder">Karyawan</label>
+                <input type="text" name="karyawanPekerjaOrder" class="form-control" id="karyawanPekerjaOrder">
             </div>
             <div class="form-group col-4">
                 <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>

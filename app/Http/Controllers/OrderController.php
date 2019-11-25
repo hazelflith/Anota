@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use App\Karyawan;
+use App\Accounting;
+use App\Jenis_Order;
 
 class OrderController extends Controller
 {
@@ -41,7 +44,23 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $order = new Order;
+        $accounting = new Accounting;
+        $karyawan = new Karyawan;
+        $jenis_order = new Jenis_Order;
+
+        $order->namaOrder = $request->namaOrder;
+        $order->deadlineOrder = $request->deadlineOrder;
+        $order->karyawanPekerjaOrder = 2; //karena belum tau cara assign banyak karyawan untuk 1 order;
+        $order->save();
+
+        $jenis_order->jenisOrder = $request->jenisOrder;
+        $jenis_order->save();
+
+        $accounting->priceOrder = $request->priceOrder;
+        $accounting->biayaSisa = $request->priceOrder;
+        $accounting->idOrder = $order->idOrder;
+        $accounting->save();
     }
 
     /**

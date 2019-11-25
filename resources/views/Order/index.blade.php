@@ -9,7 +9,7 @@
             <div class="col-10">
                 <div class="row justify-content-between">
                     <div class="col-4"><h1 class="mt-2">Orderan Anda</h1></div>
-                    <div class="col-4"><a href="order/create" style="float:right" class="mt-2 btn btn-primary">Input</a></div>
+                    <div class="col-4"><a href="order/create" class="mt-2 btn btn-primary float-right">Input</a></div>
                 </div>
 
                 <table class="table">
