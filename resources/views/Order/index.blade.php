@@ -27,8 +27,8 @@
                     @foreach ($orders as $order)
                         <tr>
                             <th scope='row'>{{$loop -> iteration}}</th>
-                            <td>{{$order ->namaproject}}</td>
-                            <td>{{$order ->jeniskerjaan}}</td>
+                            <td>{{$order ->namaOrder}}</td>
+                            <td>{{$order ->jenisOrder}}</td>
                             <td>{{$order ->waktu}}</td>
                             <td>Rp.{{$order ->biaya}}</td>
                             <td>{{$order ->karyawan}}</td>

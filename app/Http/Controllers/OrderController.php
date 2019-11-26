@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Karyawan;
 use App\Accounting;
-use App\Jenis_Order;
+use App\JenisOrder;
 
 class OrderController extends Controller
 {
@@ -23,6 +23,9 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
+        $accounting = Accounting::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
+        $JenisOrder = JenisOrder::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
+        $Karyawan = Karyawan::all();        //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
         return view('order.index',['orders'=> $orders]);
     }
 
@@ -47,20 +50,24 @@ class OrderController extends Controller
         $order = new Order;
         $accounting = new Accounting;
         $karyawan = new Karyawan;
-        $jenis_order = new Jenis_Order;
+        $jenis_order = new JenisOrder;
 
         $order->namaOrder = $request->namaOrder;
         $order->deadlineOrder = $request->deadlineOrder;
         $order->karyawanPekerjaOrder = 2; //karena belum tau cara assign banyak karyawan untuk 1 order;
+        $order->progressOrder = 0;
         $order->save();
 
-        $jenis_order->jenisOrder = $request->jenisOrder;
+        $jenis_order->jenisOrder = $request->jenisOrder; //akan berubah. seharusnya primary key ini di assign di page lain
         $jenis_order->save();
 
         $accounting->priceOrder = $request->priceOrder;
         $accounting->biayaSisa = $request->priceOrder;
+        $accounting->biayaMasuk = 0;
         $accounting->idOrder = $order->idOrder;
         $accounting->save();
+
+        return redirect('order');
     }
 
     /**

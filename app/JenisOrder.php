@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Jenis_Order extends Model
+class JenisOrder extends Model
 {
     protected $primaryKey = 'jenisOrder';
 }
