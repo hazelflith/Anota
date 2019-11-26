@@ -24,9 +24,13 @@ class OrderController extends Controller
     {
         $orders = Order::all();
         $accounting = Accounting::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
-        $JenisOrder = JenisOrder::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
-        $Karyawan = Karyawan::all();        //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
-        return view('order.index',['orders'=> $orders]);
+        $jenis_order = JenisOrder::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
+        $karyawan = Karyawan::all();        //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
+        
+        $merged = $orders->merge($accounting)->merge($jenis_order)->merge($karyawan);
+        $result = $merged->all();
+
+        return view('order.index',['orders'=> $result]);
     }
 
     /**

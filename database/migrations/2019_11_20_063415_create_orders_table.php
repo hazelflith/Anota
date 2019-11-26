@@ -16,6 +16,8 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('idOrder');
             $table->string('namaOrder')->unique();
+            $table->string('jenisOrder');
+            $table->foreign('jenisOrder')->references('jenisOrder')->on('jenis_orders');
             $table->date('deadlineOrder');
             $table->integer('progressOrder');
             $table->integer('karyawanPekerjaOrder');
