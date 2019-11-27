@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Order;
 use App\Karyawan;
 use App\Accounting;
@@ -22,15 +23,18 @@ class OrderController extends Controller
     
     public function index()
     {
-        $orders = Order::all();
+        $order = Order::all();
         $accounting = Accounting::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
         $jenis_order = JenisOrder::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
         $karyawan = Karyawan::all();        //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
         
-        $merged = $orders->merge($accounting)->merge($jenis_order)->merge($karyawan);
-        $result = $merged->all();
+        //menggabungkan semua query
+        $join = DB::table('orders')
+                ->join('accountings','orders.idOrder','=','accountings.idOrder')
+                ->select('orders.*','accountings.priceOrder')
+                ->get();
 
-        return view('order.index',['orders'=> $result]);
+        return view('order.index',['orders'=> $join]);
     }
 
     /**
@@ -56,14 +60,15 @@ class OrderController extends Controller
         $karyawan = new Karyawan;
         $jenis_order = new JenisOrder;
 
+        $jenis_order->jenisOrder = $request->jenisOrder; //akan berubah. seharusnya primary key ini di assign di page lain
+        $jenis_order->save();
+
         $order->namaOrder = $request->namaOrder;
         $order->deadlineOrder = $request->deadlineOrder;
         $order->karyawanPekerjaOrder = 2; //karena belum tau cara assign banyak karyawan untuk 1 order;
         $order->progressOrder = 0;
+        $order->jenisOrder = $request->jenisOrder;
         $order->save();
-
-        $jenis_order->jenisOrder = $request->jenisOrder; //akan berubah. seharusnya primary key ini di assign di page lain
-        $jenis_order->save();
 
         $accounting->priceOrder = $request->priceOrder;
         $accounting->biayaSisa = $request->priceOrder;

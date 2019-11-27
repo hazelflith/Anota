@@ -24,17 +24,17 @@
                         <th scope="col">Progress Kerjaan</th>
                     </tr>
                     <tbody>
-                    @foreach ($orders as $order)
+                      @foreach ($orders as $order)
                         <tr>
                             <th scope='row'>{{$loop -> iteration}}</th>
                             <td>{{$order ->namaOrder}}</td>
                             <td>{{$order ->jenisOrder}}</td>
-                            <td>{{$order ->waktu}}</td>
-                            <td>Rp.{{$order ->biaya}}</td>
-                            <td>{{$order ->karyawan}}</td>
-                            <td>{{$order ->progress}}%</td>
+                            <td>{{$order ->deadlineOrder}}</td>
+                            <td>Rp.{{$order ->priceOrder}}</td>
+                            <td>Karyawan</td>
+                            <td>{{$order ->progressOrder}}%</td>
                         </tr>
-                    @endforeach
+                    @endforeach 
                     </tbody>
                     </thead>
                 </table>
