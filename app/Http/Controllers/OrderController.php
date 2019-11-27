@@ -23,6 +23,7 @@ class OrderController extends Controller
     
     public function index()
     {
+        //ambil data dari database
         $order = Order::all();
         $accounting = Accounting::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
         $jenis_order = JenisOrder::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
@@ -61,7 +62,7 @@ class OrderController extends Controller
         $jenis_order = new JenisOrder;
 
         $jenis_order->jenisOrder = $request->jenisOrder; //akan berubah. seharusnya primary key ini di assign di page lain
-        $jenis_order->save();
+        $jenis_order->save();       //memasukkan ke database
 
         $order->namaOrder = $request->namaOrder;
         $order->deadlineOrder = $request->deadlineOrder;
