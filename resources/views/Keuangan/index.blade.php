@@ -4,12 +4,14 @@
 @section('status4', 'color:#FF8787')
 
 @section('container')
+<!-- Custom styles for this template -->
+<link href="/css/table.css" rel="stylesheet">
     <div class="container">
         <div class="row">
-            <div class="col-10">
+            <div class="col-10 table1 rounded">
                 <h1 class="mt-2">Status Keuangan</h1>
                 <table class="table">
-                    <thead class="thead-dark">
+                    <thead class="thead-dark customtitle">
                     <tr>
                         <th scope="col">Nama Project</th>
                         <th scope="col">Jenis Kerjaan</th>

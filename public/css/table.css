@@ -1,6 +1,9 @@
 .rowtable{
     background-color: rgb(238, 238, 238);
 }
+.heading1{
+    text-shadow: 0.25px 0.25px 4px #636363;
+}
 .table1{
     margin-top: 30px;
     min-height: 40%;
