@@ -62,7 +62,7 @@
             <div class="h8"style="margin-right: 70px;">Lupa Password ?   <a href="url">Hubungi Kami</a></div> 
         </div>
         
-        <button class="btn btn-2" type="submit" name="submit">Sign in </button>
+        <button class="btn btn-2" type="submit" name="submit">Log in </button>
         <p class="mt-5 mb-3 text-muted">&copy; Anota 2019</p>
       </form>
     </div>

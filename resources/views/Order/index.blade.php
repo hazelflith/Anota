@@ -4,16 +4,18 @@
 @section('status2', 'color:#FF8787')
 
 @section('container')
+<!-- Custom styles for this template -->
+<link href="/css/table.css" rel="stylesheet">
     <div class="container">
         <div class="row">
-            <div class="col-10">
+            <div class="col-10 table1 rounded">
                 <div class="row justify-content-between">
                     <div class="col-4"><h1 class="mt-2">Orderan Anda</h1></div>
                     <div class="col-4"><a href="order/create" class="mt-2 btn btn-primary float-right">Input</a></div>
                 </div>
 
                 <table class="table">
-                    <thead class="thead-dark">
+                    <thead class="thead-dark customtitle">
                     <tr>
                         <th scope="col">No.</th>
                         <th scope="col">Nama Project</th>
@@ -25,9 +27,9 @@
                     </tr>
                     <tbody>
                       @foreach ($orders as $order)
-                        <tr>
+                        <tr class="rowtable">
                             <th scope='row'>{{$loop -> iteration}}</th>
-                            <td>{{$order ->namaOrder}}</td>
+                            <td >{{$order ->namaOrder}}</td>
                             <td>{{$order ->jenisOrder}}</td>
                             <td>{{$order ->deadlineOrder}}</td>
                             <td>Rp.{{$order ->priceOrder}}</td>
@@ -38,6 +40,15 @@
                     </tbody>
                     </thead>
                 </table>
+                    <nav aria-label="Page navigation example">
+                    <ul class="pagination float-right">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                    </nav>
                </div>
             </div>
         </div>

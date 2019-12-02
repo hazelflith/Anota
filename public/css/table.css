@@ -1,0 +1,17 @@
+.rowtable{
+    background-color: rgb(238, 238, 238);
+}
+.table1{
+    margin-top: 30px;
+    min-height: 40%;
+    min-width: 100%;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #ffffff;
+    border-radius: 0.75em!important;
+    box-shadow: 3px 7px 8px #888888;
+}
+.customtitle{
+    font-size: small;
+}
