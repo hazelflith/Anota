@@ -33,7 +33,7 @@ class OrderController extends Controller
         $join = DB::table('orders')
                 ->join('accountings','orders.idOrder','=','accountings.idOrder')
                 ->select('orders.*','accountings.priceOrder')
-                ->get();
+                ->paginate(10);
 
         return view('order.index',['orders'=> $join]);
     }
