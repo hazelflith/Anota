@@ -23,19 +23,12 @@ class OrderController extends Controller
     
     public function index()
     {
-        //ambil data dari database
-        $order = Order::all();
-        $accounting = Accounting::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
-        $jenis_order = JenisOrder::all();    //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
-        $karyawan = Karyawan::all();        //segera diubah, karena kayaknya gaaman kalau semua data langsung dipanggil
-        
-        //menggabungkan semua query
-        $join = DB::table('orders')
+        $orders = DB::table('orders')
                 ->join('accountings','orders.idOrder','=','accountings.idOrder')
                 ->select('orders.*','accountings.priceOrder')
                 ->paginate(10);
 
-        return view('order.index',['orders'=> $join]);
+        return view('order.index',['orders'=> $orders]);
     }
 
     /**

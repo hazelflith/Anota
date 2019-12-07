@@ -13,22 +13,24 @@
                 <table class="table">
                     <thead class="thead-dark customtitle">
                     <tr>
-                        <th scope="col">Nama Project</th>
+                        <th scope="col">Project</th>
                         <th scope="col">Jenis Kerjaan</th>
                         <th scope="col">Waktu Tenggat Kerjaan</th>
-                        <th scope="col">Biaya</th>
-                        <th scope="col">Karyawan</th>
-                        <th scope="col">Progress Kerjaan</th>
+                        <th scope="col">Biaya Masuk</th>
+                        <th scope="col">Nota</th>
+                        <th scope="col">Progress Pembayaran</th>
                     </tr>
                     <tbody>
-                    <tr>
-                    <th scope='row'>PROJECT 1</th>
-                    <td>JENIS 1</td>
-                    <td>WAKTU 1</td>
-                    <td>Rp.000,00</td>
-                    <td>IMAGE123</td>
-                    <td>BARPROGRESS1</td>
-                    </tr>
+                    @foreach ($keuangans as $keuangan)
+                        <tr>
+                            <th scope='row'>{{$keuangan -> namaOrder}}</th>
+                            <td>{{$keuangan -> jenisOrder}}</td>
+                            <td>{{$keuangan -> deadlineOrder}}</td>
+                            <td>{{$keuangan -> biayaMasuk}}</td>
+                            <td>IMAGE123</td>
+                            <td>{{$keuangan -> biayaMasuk}}/{{$keuangan -> priceOrder}}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                     </thead>
                 </table>
