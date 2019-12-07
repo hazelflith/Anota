@@ -9,25 +9,52 @@
     <div class="container">
         <div class="row">
             <div class="col-10 table1 rounded">
-                <h1 class="mt-2">Karyawan Anda</h1>
+                <div class="row justify-content-between">
+                <div class="col-4"><h1 class="mt-2 heading1">Karyawan Anda</h1></div>
+                <div class="col-4"><a href="karyawan/create" class="mt-2 btn btn-primary float-right">Input</a></div>
+                </div>
                 <table class="table">
                     <thead class="thead-dark customtitle">
                     <tr>
-                        <th scope="col">Nama Project</th>
-                        <th scope="col">Jenis Kerjaan</th>
+                        <th scope="col">Nama Karyawan</th>
                         <th scope="col">Waktu Tenggat Kerjaan</th>
-                        <th scope="col">Biaya</th>
-                        <th scope="col">Karyawan</th>
+                        <th scope="col">Status Kerjaan</th>
+                        <th scope="col">Uang Pegangan</th>
                         <th scope="col">Progress Kerjaan</th>
+                        <th scope="col">Action</th>
                     </tr>
                     <tbody>
                     <tr>
-                    <th scope='row'>PROJECT 1</th>
-                    <td>JENIS 1</td>
-                    <td>WAKTU 1</td>
-                    <td>Rp.000,00</td>
-                    <td>IMAGE123</td>
-                    <td>BARPROGRESS1</td>
+                        <th scope='row'>Karyawan 1</th>
+                        <td>WAKTU 1</td>
+                        <td>STATUS</td>
+                        <td>Rp.000,00</td>
+                        <td>BARPROGRESS1</td>
+                        <td><a class="btn btn-success" href="karyawan/assign">Assign</a> <a class="btn btn-danger" href="karyawan/delete">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <th scope='row'>Karyawan 1</th>
+                        <td>WAKTU 1</td>
+                        <td>STATUS</td>
+                        <td>Rp.000,00</td>
+                        <td>BARPROGRESS1</td>
+                        <td><a class="btn btn-success" href="karyawan/assign">Assign</a> <a class="btn btn-danger" href="karyawan/delete">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <th scope='row'>Karyawan 1</th>
+                        <td>WAKTU 1</td>
+                        <td>STATUS</td>
+                        <td>Rp.000,00</td>
+                        <td>BARPROGRESS1</td>
+                        <td><a class="btn btn-success" href="karyawan/assign">Assign</a> <a class="btn btn-danger" href="karyawan/delete">Delete</a></td>
+                    </tr>
+                    <tr>
+                        <th scope='row'>Karyawan 1</th>
+                        <td>WAKTU 1</td>
+                        <td>STATUS</td>
+                        <td>Rp.000,00</td>
+                        <td>BARPROGRESS1</td>
+                        <td><a class="btn btn-success" href="karyawan/assign">Assign</a> <a class="btn btn-danger" href="karyawan/delete">Delete</a></td>
                     </tr>
                     </tbody>
                     </thead>

@@ -12,7 +12,6 @@
 */
 
 Route::get('/','HomeController@beranda')->name('default');
-Route::get('/karyawan','KaryawanController@index');
 Route::get('/keuangan','KeuanganController@index');
 Route::get('/akta','PagesController@akta');
 Route::get('/user','PagesController@user');
@@ -22,3 +21,7 @@ Auth::routes();
 Route::get('/order','OrderController@index');
 Route::get('/order/create','OrderController@create');
 Route::post('/order/create','OrderController@store');
+
+//karyawan
+Route::get('/karyawan','KaryawanController@index');
+Route::get('/karyawan/create','KaryawanController@create');

@@ -16,11 +16,9 @@ class KaryawanController extends Controller
         $this->middleware('auth');
     }
     
-    public $nama = 'Harris P';
     public function index()
     {
-        $nama = $this->nama;
-        return view('karyawan.index',['nama' => $nama]);
+        return view('karyawan.index');
     }
 
     /**
@@ -30,7 +28,7 @@ class KaryawanController extends Controller
      */
     public function create()
     {
-        //
+        return view('karyawan.create');
     }
 
     /**
@@ -41,7 +39,10 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $karyawan = new Karyawan;
+
+        $karyawan->namaKaryawan = $request->namaKaryawan;
+        $karyawan->emailKaryawan = $request->emailKaryawan;
     }
 
     /**
