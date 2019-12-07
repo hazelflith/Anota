@@ -32,7 +32,7 @@
                             <td >{{$order ->namaOrder}}</td>
                             <td>{{$order ->jenisOrder}}</td>
                             <td>{{$order ->deadlineOrder}}</td>
-                            <td>Rp.{{$order ->priceOrder}}</td>
+                            <td>Rp. {{number_format($order ->priceOrder)}}</td>
                             <td>Karyawan</td>
                             <td>{{$order ->progressOrder}}%</td>
                         </tr>

@@ -26,9 +26,9 @@
                             <th scope='row'>{{$keuangan -> namaOrder}}</th>
                             <td>{{$keuangan -> jenisOrder}}</td>
                             <td>{{$keuangan -> deadlineOrder}}</td>
-                            <td>{{$keuangan -> biayaMasuk}}</td>    <!--belum ditambahkan format angka-->
+                            <td>{{number_format($keuangan -> biayaMasuk)}}</td>    
                             <td>IMAGE123</td>   <!-- Belum ada database untuk nota -->
-                            <td>{{$keuangan -> biayaMasuk}}/{{$keuangan -> priceOrder}}</td> <!--belum ditambahkan format angka-->
+                            <td>{{$keuangan -> biayaMasuk}}/{{number_format($keuangan -> priceOrder)}}</td> 
                         </tr>
                     @endforeach
                     </tbody>
