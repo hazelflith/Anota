@@ -24,38 +24,16 @@
                         <th scope="col">Action</th>
                     </tr>
                     <tbody>
+                    @foreach($karyawans as $karyawan)
                     <tr>
-                        <th scope='row'>Karyawan 1</th>
-                        <td>WAKTU 1</td>
-                        <td>STATUS</td>
-                        <td>Rp.000,00</td>
+                        <th scope='row'>{{$karyawan->namaKaryawan}}</th>
+                        <td>Belum Ditugaskan</td>
+                        <td>Belum Ditugaskan</td>
+                        <td>Belum Ditugaskan</td>
                         <td>BARPROGRESS1</td>
-                        <td><a class="btn btn-success" href="karyawan/assign">Assign</a> <a class="btn btn-danger" href="karyawan/delete">Delete</a></td>
+                        <td><a class="btn btn-success" href="karyawan/assign?{{$karyawan->idKaryawan}}">Assign</a> <a class="btn btn-danger" href="karyawan/delete/{{$karyawan->idKaryawan}}">Delete</a></td>
                     </tr>
-                    <tr>
-                        <th scope='row'>Karyawan 1</th>
-                        <td>WAKTU 1</td>
-                        <td>STATUS</td>
-                        <td>Rp.000,00</td>
-                        <td>BARPROGRESS1</td>
-                        <td><a class="btn btn-success" href="karyawan/assign">Assign</a> <a class="btn btn-danger" href="karyawan/delete">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <th scope='row'>Karyawan 1</th>
-                        <td>WAKTU 1</td>
-                        <td>STATUS</td>
-                        <td>Rp.000,00</td>
-                        <td>BARPROGRESS1</td>
-                        <td><a class="btn btn-success" href="karyawan/assign">Assign</a> <a class="btn btn-danger" href="karyawan/delete">Delete</a></td>
-                    </tr>
-                    <tr>
-                        <th scope='row'>Karyawan 1</th>
-                        <td>WAKTU 1</td>
-                        <td>STATUS</td>
-                        <td>Rp.000,00</td>
-                        <td>BARPROGRESS1</td>
-                        <td><a class="btn btn-success" href="karyawan/assign">Assign</a> <a class="btn btn-danger" href="karyawan/delete">Delete</a></td>
-                    </tr>
+                    @endforeach
                     </tbody>
                     </thead>
                 </table>

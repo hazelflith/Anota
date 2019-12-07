@@ -23,5 +23,7 @@ Route::get('/order/create','OrderController@create');
 Route::post('/order/create','OrderController@store');
 
 //karyawan
-Route::get('/karyawan','KaryawanController@index');
-Route::get('/karyawan/create','KaryawanController@create');
+Route::get('/karyawan','Karyawan\KaryawanController@index');
+Route::get('/karyawan/create','Karyawan\KaryawanController@create');
+Route::post('/karyawan/create','Karyawan\KaryawanController@store');
+Route::get('/karyawan/delete/{idKaryawan}','Karyawan\KaryawanController@destroy');

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Karyawan;
+use App\Http\Controllers\Controller;
+use App\Karyawan;
 
 use Illuminate\Http\Request;
 
@@ -18,7 +20,8 @@ class KaryawanController extends Controller
     
     public function index()
     {
-        return view('karyawan.index');
+        $karyawans = Karyawan::all();
+        return view('karyawan.index',['karyawans' => $karyawans]);
     }
 
     /**
@@ -43,6 +46,9 @@ class KaryawanController extends Controller
 
         $karyawan->namaKaryawan = $request->namaKaryawan;
         $karyawan->emailKaryawan = $request->emailKaryawan;
+        $karyawan->save();
+
+        return redirect('karyawan');
     }
 
     /**
@@ -85,8 +91,11 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idKaryawan)
     {
-        //
+        $karyawan = Karyawan::find($idKaryawan);
+        $karyawan->delete();
+
+        return redirect('karyawan');
     }
 }
