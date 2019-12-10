@@ -4,13 +4,85 @@
 @section('status5', 'color:#FF8787')
 
 @section('container')
+<link href="/css/akta.css" rel="stylesheet">
     <div class="container">
         <div class="row">
-            <div class="col-10">
-                <h1 class="mt-2">Coming Soon!</h1>
-               </div>
+            <div class="col"style="padding-top:30px">
+                <div class="card">
+                <img src="/assets/img/document.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4><b>Akta Peralihan Hak</b></h4> 
+                    <p>Deskripsi</p> 
+                </div>
+                </div>
+            </div>
+            <div class="col"style="padding-top:30px">
+            <div class="card">
+                <img src="/assets/img/document.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4><b>Akta Peralihan Hak</b></h4> 
+                    <p>Deskripsi</p> 
+                </div>
+                </div>
+            </div>
+            <div class="col"style="padding-top:30px">
+            <div class="card">
+                <img src="/assets/img/document.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                <h4><b>Akta Peralihan Hak</b></h4> 
+                    <p>Deskripsi</p> 
+                </div>
+                </div>
+            </div>
+            <div class="col" style="padding-top:30px">
+            <div class="card">
+                <img src="/assets/img/document.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                <h4><b>Akta Peralihan Hak</b></h4> 
+                    <p>Deskripsi</p> 
+                </div>
+                </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col"style="padding-top:30px">
+                <div class="card">
+                <img src="/assets/img/document.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4><b>Akta Peralihan Hak</b></h4> 
+                    <p>Deskripsi</p> 
+                </div>
+                </div>
+            </div>
+            <div class="col"style="padding-top:30px">
+            <div class="card">
+                <img src="/assets/img/document.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4><b>Akta Peralihan Hak</b></h4> 
+                    <p>Deskripsi</p> 
+                </div>
+                </div>
+            </div>
+            <div class="col"style="padding-top:30px">
+            <div class="card">
+                <img src="/assets/img/document.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                <h4><b>Akta Peralihan Hak</b></h4> 
+                    <p>Deskripsi</p> 
+                </div>
+                </div>
+            </div>
+            <div class="col" style="padding-top:30px">
+            <div class="card">
+                <img src="/assets/img/document.jpg" alt="Avatar" style="width:100%">
+                <div class="container">
+                <h4><b>Akta Peralihan Hak</b></h4> 
+                    <p>Deskripsi</p> 
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 

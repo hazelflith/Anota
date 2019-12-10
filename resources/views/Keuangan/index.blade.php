@@ -8,7 +8,7 @@
 <link href="/css/table.css" rel="stylesheet">
     <div class="container">
         <div class="row">
-            <div class="col-10 table1 rounded">
+            <div class="col-10 table1 rounded animated zoomIn faster">
                 <h1 class="mt-2">Status Keuangan</h1>
                 <table class="table">
                     <thead class="thead-dark customtitle">
