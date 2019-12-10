@@ -9,9 +9,10 @@
   <div class="container">
         <div class="row">
             <div class="col mt-3">
-                @foreach ($karyawans as $karyawan)
-                <h1>{{$karyawan->namaKaryawan}}</h1>
-                @endforeach
+                
+                <h1>Nama : {{$karyawans->namaKaryawan}}</h1>
+                <h1>Email : {{$karyawans->emailKaryawan}}</h1>
+                
             </div>
         </div>
     </div>

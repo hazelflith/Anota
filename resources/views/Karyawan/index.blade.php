@@ -27,7 +27,7 @@
                     <tbody>
                     @foreach($karyawans as $karyawan)
                     <tr>
-                        <th scope='row'>{{$karyawan->namaKaryawan}}</th>
+                        <th scope='row'><a href="/karyawan/detail/{{$karyawan->idKaryawan}}">{{$karyawan->namaKaryawan}}</a></th>
                         <td>{{$karyawan->namaOrder}}</td>
                         <td>{{$karyawan->deadlineKaryawan}}</td>
                         <td>

@@ -27,13 +27,12 @@ Route::get('/karyawan','Karyawan\KaryawanController@index');
 Route::get('/karyawan/create','Karyawan\KaryawanController@create'); //create karyawan
 Route::post('/karyawan/create','Karyawan\KaryawanController@store');
 Route::get('/karyawan/delete/{idKaryawan}','Karyawan\KaryawanController@destroy'); //delete karyawan
-
 Route::get('/karyawan/detail/{idKaryawan}','Karyawan\KaryawanController@show');
+    //assign Karyawan
+    Route::get('/karyawan/assign/{idKaryawan}','Karyawan\ProgressKaryawanController@edit');
+    Route::post('/karyawan/assign/{idKaryawan}','Karyawan\ProgressKaryawanController@assign');
 
 //Untuk upload
 Route::post('/keuangan/upload','KeuanganUploadController@proses_upload');
 
-    //assign Karyawan
-    Route::get('/karyawan/assign/{idKaryawan}','Karyawan\ProgressKaryawanController@edit');
-    Route::post('/karyawan/assign/{idKaryawan}','Karyawan\ProgressKaryawanController@assign');
 
