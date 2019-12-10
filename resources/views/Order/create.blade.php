@@ -17,11 +17,11 @@
         @csrf
             <div class="form-group col-4">
                 <label for="namaOrder">Nama Project</label>
-                <input type="text" name="namaOrder" class="form-control" id="namaOrder">
+                <input type="text" name="namaOrder" class="form-control" id="namaOrder" placeholder="Masukkan nama project">
             </div>
             <div class="form-group col-4">
                 <label for="jenisOrder">Jenis Kerjaan</label>
-                <input type="text" name="jenisOrder" class="form-control" id="jenisOrder">
+                <input type="text" name="jenisOrder" class="form-control" id="jenisOrder" placeholder="Masukkan jenis pekerjaan">
             </div>
             <div class="form-group col-4">
                 <label for="deadlineOrder">Waktu Tenggat</label>
@@ -29,11 +29,11 @@
             </div>
             <div class="form-group col-4">
                 <label for="priceOrder">Biaya</label>
-                <input type="text" name ="priceOrder" class="form-control" id="priceOrder">
+                <input type="text" name ="priceOrder" class="form-control" id="priceOrder" placeholder="Masukkan biaya">
             </div>
             <div class="form-group col-4">
                 <label for="karyawanPekerjaOrder">Karyawan</label>
-                <input type="text" name="karyawanPekerjaOrder" class="form-control" id="karyawanPekerjaOrder">
+                <input type="text" name="karyawanPekerjaOrder" class="form-control" id="karyawanPekerjaOrder" placeholder="Masukkan nama PIC, Kosongkan jika belum ada">
             </div>
             <div class="form-group col-4">
                 <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>
