@@ -37,8 +37,9 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('order.create');
+    {   
+        $jenisOrders = DB::table('jenis_orders')->get();
+        return view('order.create', ['jenisOrders' => $jenisOrders]);
     }
 
     /**

@@ -20,16 +20,20 @@
                 <input type="text" value="{{$karyawan->namaKaryawan}}" name="namaKaryawan" class="form-control" id="namaKaryawan" readonly>
             </div>
             <div class="form-group col-4">
-                <label for="idOrder">PIC dari</label> <!--dropdown-->
-                <input type="text" name="idOrder" class="form-control" id="idOrder">
+                <label for="idOrder">PIC dari</label> 
+                <select class="form-control" name="idOrder" id="idOrder" required>
+                    @foreach ($orders as $order)
+                    <option value="{{$order->idOrder}}">{{$order->namaOrder}}</option>
+                    @endforeach
+                </select>
             </div>            
             <div class="form-group col-4">
                 <label for="deadlineKaryawan">Waktu Tenggat Kerjaan</label>
-                <input type="date" name="deadlineKaryawan" class="form-control" id="deadlineKaryawan">
+                <input type="date" name="deadlineKaryawan" class="form-control" id="deadlineKaryawan" required>
             </div>            
             <div class="form-group col-4">
                 <label for="uangPegangan">Uang Pegangan</label>
-                <input type="text" value="0" name="uangPegangan" class="form-control" id="uangPegangan">
+                <input type="text" value="0" name="uangPegangan" class="form-control" id="uangPegangan" required>
             </div>            
             <div class="form-group col-4">
                 <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>

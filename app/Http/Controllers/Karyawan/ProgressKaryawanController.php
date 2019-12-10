@@ -14,7 +14,8 @@ class ProgressKaryawanController extends Controller
 
     public function edit($idKaryawan){
         $karyawan = Karyawan::find($idKaryawan);
-        return view('karyawan.assign',['karyawan' => $karyawan]);
+        $orders = Order::all();
+        return view('karyawan.assign', compact('karyawan','orders'));
     }
 
     //assign pekerjaan seorang karyawan

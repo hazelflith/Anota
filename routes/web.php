@@ -19,7 +19,7 @@ Auth::routes();
 
 //order
 Route::get('/order','OrderController@index');
-Route::get('/order/create','OrderController@create');
+Route::get('order/create','OrderController@create');
 Route::post('/order/create','OrderController@store');
 
 //karyawan

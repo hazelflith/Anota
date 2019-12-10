@@ -17,11 +17,11 @@
         @csrf
             <div class="form-group col-4">
                 <label for="namaKaryawan">Nama Karyawan</label>
-                <input type="text" name="namaKaryawan" class="form-control" id="namaKaryawan">
+                <input type="text" name="namaKaryawan" class="form-control" id="namaKaryawan" required>
             </div>
             <div class="form-group col-4">
                 <label for="emailKaryawan">Email</label>
-                <input type="text" name="emailKaryawan" class="form-control" id="emailKaryawan">
+                <input type="text" name="emailKaryawan" class="form-control" id="emailKaryawan" required>
             </div>            
             <div class="form-group col-4">
                 <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>
