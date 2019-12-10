@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Karyawan;
-use App\Http\Controllers\Controller;
-use App\Karyawan;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class KaryawanController extends Controller
+class ProgressKaryawanController extends Controller
 {
     /**
      * Create a new controller instance. Page hanya bisa diakses ketika sudah login
@@ -18,10 +16,14 @@ class KaryawanController extends Controller
         $this->middleware('auth');
     }
     
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $karyawans = Karyawan::all();
-        return view('karyawan.index',['karyawans' => $karyawans]);
+        //
     }
 
     /**
@@ -31,7 +33,7 @@ class KaryawanController extends Controller
      */
     public function create()
     {
-        return view('karyawan.create');
+        //
     }
 
     /**
@@ -42,13 +44,7 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        $karyawan = new Karyawan;
-
-        $karyawan->namaKaryawan = $request->namaKaryawan;
-        $karyawan->emailKaryawan = $request->emailKaryawan;
-        $karyawan->save();
-
-        return redirect('karyawan');
+        //
     }
 
     /**
@@ -57,11 +53,9 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($idKaryawan)
+    public function show($id)
     {
-        $karyawans = Karyawan::find($idKaryawan);
-
-        return view('karyawan.detailKaryawan',['karyawans'=>$karyawans]);
+        //
     }
 
     /**
@@ -93,11 +87,8 @@ class KaryawanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idKaryawan)
+    public function destroy($id)
     {
-        $karyawan = Karyawan::find($idKaryawan);
-        $karyawan->delete();
-
-        return redirect('karyawan');
+        //
     }
 }

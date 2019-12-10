@@ -31,7 +31,7 @@
                         <td>Belum Ditugaskan</td>
                         <td>Belum Ditugaskan</td>
                         <td>BARPROGRESS1</td>
-                        <td><a class="btn btn-success" href="karyawan/assign?{{$karyawan->idKaryawan}}">Assign</a> <a class="btn btn-danger" href="karyawan/delete/{{$karyawan->idKaryawan}}">Delete</a></td>
+                        <td><a class="btn btn-success" href="karyawan/assign/{{$karyawan->idKaryawan}}">Assign</a> <a class="btn btn-danger" href="karyawan/delete/{{$karyawan->idKaryawan}}">Delete</a></td>
                     </tr>
                     @endforeach
                     </tbody>
