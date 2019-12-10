@@ -30,3 +30,6 @@ Route::get('/karyawan/delete/{idKaryawan}','Karyawan\KaryawanController@destroy'
 
 Route::get('/karyawan/detail/{idKaryawan}','Karyawan\KaryawanController@show');
 
+//Untuk upload
+Route::post('/keuangan/upload','KeuanganUploadController@proses_upload');
+

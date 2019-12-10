@@ -29,7 +29,7 @@
                             <td>{{number_format($keuangan -> biayaMasuk)}}</td>    
                             <td>
                                 <div class="upload-btn-wrapper1">
-                                <form>
+                                <form action="/keuangan/upload" method="POST" enctype="multipart/form-data">
                                     <label class="btn1" for="file">+</label>
                                     <input id="file" type="file" name="myfile" onchange="form.submit()"/>
                                 </form>
