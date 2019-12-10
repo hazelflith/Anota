@@ -30,4 +30,3 @@ Route::get('/karyawan/delete/{idKaryawan}','Karyawan\KaryawanController@destroy'
 
 Route::get('/karyawan/detail/{idKaryawan}','Karyawan\KaryawanController@show');
 
-
