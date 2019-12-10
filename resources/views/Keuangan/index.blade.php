@@ -29,8 +29,10 @@
                             <td>{{number_format($keuangan -> biayaMasuk)}}</td>    
                             <td>
                                 <div class="upload-btn-wrapper1">
-                                    <button class="btn1" >+</button>
-                                    <input type="file" name="myfile" onchange="form.submit()"/>
+                                <form>
+                                    <label class="btn1" for="file">+</label>
+                                    <input id="file" type="file" name="myfile" onchange="form.submit()"/>
+                                </form>
                                 </div>
                             </td>   <!-- Belum ada database untuk nota -->
                             <td>{{$keuangan -> biayaMasuk}}/{{number_format($keuangan -> priceOrder)}}</td> 
