@@ -30,9 +30,13 @@
                         <th scope='row'>{{$karyawan->namaKaryawan}}</th>
                         <td>{{$karyawan->namaOrder}}</td>
                         <td>{{$karyawan->deadlineKaryawan}}</td>
-                        <td>{{$karyawan->statusKerjaan}}</td>
-                        <td>{{$karyawan->uangPegangan}}</td>
-                        <td>{{$karyawan->progressKerjaan}}</td>
+                        <td>
+                            @if ($karyawan->statusKerjaan == NULL)
+                                -
+                            @endif
+                        </td>
+                        <td>Rp. {{number_format($karyawan->uangPegangan)}}</td>
+                        <td>{{$karyawan->progressKerjaan}}%</td>
                         <td><a class="btn btn-success" href="/karyawan/assign/{{$karyawan->idKaryawan}}">Assign</a> <a class="btn btn-danger" href="karyawan/delete/{{$karyawan->idKaryawan}}">Delete</a></td>
                     </tr>
                     @endforeach

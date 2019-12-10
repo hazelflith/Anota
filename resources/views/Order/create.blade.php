@@ -36,10 +36,6 @@
                 <input type="text" name ="priceOrder" class="form-control" id="priceOrder" placeholder="Masukkan biaya" required>
             </div>
             <div class="form-group col-4">
-                <label for="karyawanPekerjaOrder">Karyawan</label>
-                <input type="text" name="karyawanPekerjaOrder" class="form-control" id="karyawanPekerjaOrder" placeholder="Masukkan nama PIC, Kosongkan jika belum ada">
-            </div>
-            <div class="form-group col-4">
                 <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>
             </div>
         </form>

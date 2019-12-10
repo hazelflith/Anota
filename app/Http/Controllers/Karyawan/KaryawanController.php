@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Karyawan;
 use App\ProgressKaryawan;
+use App\Order;
 
 use Illuminate\Http\Request;
 
@@ -115,7 +116,7 @@ class KaryawanController extends Controller
     {
         $karyawan = Karyawan::find($idKaryawan);
         $karyawan->delete();
-
+        
         return redirect('karyawan');
     }
 }

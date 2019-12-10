@@ -56,7 +56,7 @@ class OrderController extends Controller
 
         $order->namaOrder = $request->namaOrder;
         $order->deadlineOrder = $request->deadlineOrder;
-        $order->karyawanPekerjaOrder = $request->karyawanPekerjaOrder;
+        $order->karyawanPekerjaOrder = NULL;
         $order->progressOrder = 0;
         $order->jenisOrder = $request->jenisOrder;
         $order->save();
