@@ -31,6 +31,9 @@
                                 <div class="upload-btn-wrapper1">
                                 <form action="/keuangan/upload" method="POST" enctype="multipart/form-data">
                                     <label class="btn1" for="file">+</label>
+                                <div style="display:table-cell;vertical-align:middle;" class="upload-btn-wrapper1">
+                                <form style="margin:0px">
+                                    <label class="btn1" for="file" style="margin:0px">+</label>
                                     <input id="file" type="file" name="myfile" onchange="form.submit()"/>
                                 </form>
                                 </div>
