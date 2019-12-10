@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Karyawan;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Karyawan;
+use App\ProgressKaryawan;
 
 use Illuminate\Http\Request;
 
@@ -51,6 +52,17 @@ class KaryawanController extends Controller
         $karyawan->namaKaryawan = $request->namaKaryawan;
         $karyawan->emailKaryawan = $request->emailKaryawan;
         $karyawan->save();
+
+        $progressKaryawan = new ProgressKaryawan;
+
+        $progressKaryawan->idKaryawan = $karyawan->idKaryawan;
+        $progressKaryawan->idOrder = NULL;
+        $progressKaryawan->deadlineKaryawan = NULL;
+        $progressKaryawan->uangPegangan = NULL;
+        $progressKaryawan->progressKerjaan = 0;
+        $progressKaryawan->statusKerjaan = NULL;
+
+        $progressKaryawan->save();
 
         return redirect('karyawan');
     }

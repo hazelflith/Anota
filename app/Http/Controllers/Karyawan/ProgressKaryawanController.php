@@ -17,7 +17,7 @@ class ProgressKaryawanController extends Controller
 
     //assign pekerjaan seorang karyawan
     public function assign(Request $request, $idKaryawan){
-        $progressKaryawan = new ProgressKaryawan;
+        $progressKaryawan = ProgressKaryawan::find($idKaryawan);
         
         $progressKaryawan->idKaryawan = $idKaryawan;
         $progressKaryawan->idOrder = $request->idOrder;
