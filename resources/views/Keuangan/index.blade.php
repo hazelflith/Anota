@@ -12,30 +12,30 @@
                 <h1 class="mt-2">Status Keuangan</h1>
                 <table class="table">
                     <thead class="thead-dark customtitle">
-                    <tr>
+                    <tr class="text-center">
                         <th scope="col">Project</th>
                         <th scope="col">Jenis Kerjaan</th>
                         <th scope="col">Waktu Tenggat Kerjaan</th>
                         <th scope="col">Biaya Masuk</th>
                         <th scope="col">Nota</th>
                         <th scope="col">Progress Pembayaran</th>
+                        <th scope="col">Pembayaran</th>
                     </tr>
                     <tbody>
                     @foreach ($keuangans as $keuangan)
-                        <tr>
+                        <tr class="rowtable text-center">
                             <th scope='row'>{{$keuangan -> namaOrder}}</th>
                             <td>{{$keuangan -> jenisOrder}}</td>
                             <td>{{$keuangan -> deadlineOrder}}</td>
-                            <td>{{number_format($keuangan -> biayaMasuk)}}</td>    
+                            <td>Rp. {{number_format($keuangan -> biayaMasuk)}}</td>    
                             <td>
                                 <form style="margin:0" action="/keuangan/upload" method="POST" enctype="multipart/form-data">
-                                    <div class="upload-btn-wrapper1">
-                                        <label style="margin:0" class="btn1" for="file">+</label>
+                                        <label style="margin:0" class="btn btn-primary" for="file">+</label>
                                         <input type="file" id="file">
-                                    </div>
                                 </form>
                             </td>   <!-- Belum ada database untuk nota -->
-                            <td>{{$keuangan -> biayaMasuk}}/{{number_format($keuangan -> priceOrder)}}</td> 
+                            <td>Rp. {{$keuangan -> biayaMasuk}} / Rp. {{number_format($keuangan -> priceOrder)}}</td> 
+                            <td><a class="btn btn-success" style="color:white">+</a></td>
                         </tr>
                     @endforeach
                     </tbody>

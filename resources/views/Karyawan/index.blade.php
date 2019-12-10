@@ -14,31 +14,31 @@
                 <div class="col-4"><a href="karyawan/create" class="mt-2 btn btn-primary float-right">Input</a></div>
                 </div>
                 <table class="table">
-                    <thead class="thead-dark customtitle">
-                    <tr>
-                        <th scope="col">Nama Karyawan</th>
-                        <th scope="col">PIC dari</th>
-                        <th scope="col">Waktu Tenggat Kerjaan</th>
-                        <th scope="col">Status Kerjaan</th>
-                        <th scope="col">Uang Pegangan</th>
-                        <th scope="col">Progress Kerjaan</th>
-                        <th scope="col">Action</th>
-                    </tr>
+                    <thead class="thead-dark customtitle text-center">
+                        <tr>
+                            <th scope="col">Nama Karyawan</th>
+                            <th scope="col">PIC dari</th>
+                            <th scope="col">Waktu Tenggat Kerjaan</th>
+                            <th scope="col">Status Kerjaan</th>
+                            <th scope="col">Uang Pegangan</th>
+                            <th scope="col">Progress Kerjaan</th>
+                            <th scope="col">Action</th>
+                        </tr>
                     <tbody>
                     @foreach($karyawans as $karyawan)
-                    <tr>
-                        <th scope='row'><a href="/karyawan/detail/{{$karyawan->idKaryawan}}">{{$karyawan->namaKaryawan}}</a></th>
-                        <td>{{$karyawan->namaOrder}}</td>
-                        <td>{{$karyawan->deadlineKaryawan}}</td>
-                        <td>
-                            @if ($karyawan->statusKerjaan == NULL)
-                                -
-                            @endif
-                        </td>
-                        <td>Rp. {{number_format($karyawan->uangPegangan)}}</td>
-                        <td>{{$karyawan->progressKerjaan}}%</td>
-                        <td><a class="btn btn-success" href="/karyawan/assign/{{$karyawan->idKaryawan}}">Assign</a> <a class="btn btn-danger" href="karyawan/delete/{{$karyawan->idKaryawan}}">Delete</a></td>
-                    </tr>
+                        <tr class="text-center rowtable">
+                            <th scope='row'><a href="/karyawan/detail/{{$karyawan->idKaryawan}}">{{$karyawan->namaKaryawan}}</a></th>
+                            <td>{{$karyawan->namaOrder}}</td>
+                            <td>{{$karyawan->deadlineKaryawan}}</td>
+                            <td>
+                                @if ($karyawan->statusKerjaan == NULL)
+                                    -
+                                @endif
+                            </td>
+                            <td>Rp. {{number_format($karyawan->uangPegangan)}}</td>
+                            <td>{{$karyawan->progressKerjaan}}%</td>
+                            <td><a class="btn btn-success" href="/karyawan/assign/{{$karyawan->idKaryawan}}">Assign</a> <a class="btn btn-danger" href="karyawan/delete/{{$karyawan->idKaryawan}}">Delete</a></td>
+                        </tr>
                     @endforeach
                     </tbody>
                     </thead>

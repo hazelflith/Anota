@@ -16,7 +16,7 @@
 
                 <table class="table">
                     <thead class="thead-dark customtitle">
-                    <tr>
+                    <tr class="text-center">
                         <th scope="col">No.</th>
                         <th scope="col">Nama Project</th>
                         <th scope="col">Jenis Kerjaan</th>
@@ -32,18 +32,18 @@
                             @continue
                         @endif
 
-                        <tr class="rowtable">
+                        <tr class="rowtable text-center">
                             <th scope='row'>{{$loop -> iteration}}</th>
                             <td >{{$order ->namaOrder}}</td>
                             <td>{{$order ->jenisOrder}}</td>
                             <td>{{$order ->deadlineOrder}}</td>
                             <td>Rp. {{number_format($order ->priceOrder)}}</td>
                             <td>
-                            @if ($order->namaPekerjaOrder != NULL)
-                            {{$order->namaPekerjaOrder}}
-                            @else
-                            Belum ditugaskan
-                            @endif
+                                @if ($order->namaPekerjaOrder != NULL)
+                                {{$order->namaPekerjaOrder}}
+                                @else
+                                Belum ditugaskan
+                                @endif
                             </td>
                             <td>{{$order ->progressOrder}}%</td>
                         </tr>
