@@ -14,7 +14,7 @@
     <title>@yield('title')</title>
   </head>
   <body background="/assets/bg/background.png">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
     <div class="container">
         <a class="navbar-brand" href="/user" style="@yield('status0')">
         <img src="/assets/img/userlogo.png" width="35" height="35" style="margin-right:15px" class="d-inline-block align-top" alt="">
