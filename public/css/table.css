@@ -14,13 +14,16 @@
     background-color: #ffffff;
     border-radius: 0.75em!important;
     box-shadow: 3px 7px 8px #888888;
-
+    
 }
 
 .table td, .table th{
     vertical-align:middle;
 }
 
+.table input{
+    display:none;
+}
 .customtitle{
     font-size: small;
 }
