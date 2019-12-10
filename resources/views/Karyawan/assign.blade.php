@@ -17,7 +17,7 @@
         @csrf
             <div class="form-group col-4">
                 <label for="namaKaryawan">Nama Karyawan</label>
-                <input type="text" value="{{$karyawan->namaKaryawan}}" name="namaKaryawan" class="form-control" id="namaKaryawan" disabled>
+                <input type="text" value="{{$karyawan->namaKaryawan}}" name="namaKaryawan" class="form-control" id="namaKaryawan" readonly>
             </div>
             <div class="form-group col-4">
                 <label for="idOrder">PIC dari</label> <!--dropdown-->

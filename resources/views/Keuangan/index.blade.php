@@ -28,15 +28,12 @@
                             <td>{{$keuangan -> deadlineOrder}}</td>
                             <td>{{number_format($keuangan -> biayaMasuk)}}</td>    
                             <td>
-                                <div class="upload-btn-wrapper1">
-                                <form action="/keuangan/upload" method="POST" enctype="multipart/form-data">
-                                    <label class="btn1" for="file">+</label>
-                                <div style="display:table-cell;vertical-align:middle;" class="upload-btn-wrapper1">
-                                <form style="margin:0px">
-                                    <label class="btn1" for="file" style="margin:0px">+</label>
-                                    <input id="file" type="file" name="myfile" onchange="form.submit()"/>
+                                <form style="margin:0" action="/keuangan/upload" method="POST" enctype="multipart/form-data">
+                                    <div class="upload-btn-wrapper1">
+                                        <label style="margin:0" class="btn1" for="file">+</label>
+                                        <input type="file" id="file">
+                                    </div>
                                 </form>
-                                </div>
                             </td>   <!-- Belum ada database untuk nota -->
                             <td>{{$keuangan -> biayaMasuk}}/{{number_format($keuangan -> priceOrder)}}</td> 
                         </tr>

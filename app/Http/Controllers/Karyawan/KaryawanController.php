@@ -24,8 +24,10 @@ class KaryawanController extends Controller
     {
         $karyawans = DB::table('karyawans')
                     ->join('progress_karyawans','karyawans.idKaryawan','=','progress_karyawans.idKaryawan')
-                    ->select('karyawans.namaKaryawan','progress_karyawans.*')
+                    ->join('orders','progress_karyawans.idOrder','=','orders.idOrder')
+                    ->select('karyawans.namaKaryawan','progress_karyawans.*','orders.namaOrder')
                     ->get();
+
         return view('karyawan.index',['karyawans' => $karyawans]);
     }
 
@@ -53,10 +55,10 @@ class KaryawanController extends Controller
         $karyawan->emailKaryawan = $request->emailKaryawan;
         $karyawan->save();
 
-        $progressKaryawan = new ProgressKaryawan;
+        $progressKaryawan = new ProgressKaryawan; //dibuat banyak null untuk abstract supaya bisa join
 
         $progressKaryawan->idKaryawan = $karyawan->idKaryawan;
-        $progressKaryawan->idOrder = NULL;
+        $progressKaryawan->idOrder = 5869; //id untuk yang belum ditugaskan
         $progressKaryawan->deadlineKaryawan = NULL;
         $progressKaryawan->uangPegangan = NULL;
         $progressKaryawan->progressKerjaan = 0;

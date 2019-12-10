@@ -27,13 +27,24 @@
                     </tr>
                     <tbody>
                       @foreach ($orders as $order)
+
+                        @if ($order->idOrder == 5869) <!--Menghindari id abstract untuk di tampilkan-->
+                            @continue
+                        @endif
+
                         <tr class="rowtable">
                             <th scope='row'>{{$loop -> iteration}}</th>
                             <td >{{$order ->namaOrder}}</td>
                             <td>{{$order ->jenisOrder}}</td>
                             <td>{{$order ->deadlineOrder}}</td>
                             <td>Rp. {{number_format($order ->priceOrder)}}</td>
-                            <td>Karyawan</td>
+                            <td>
+                            @if ($order->namaPekerjaOrder != NULL)
+                            {{$order->namaPekerjaOrder}}
+                            @else
+                            Belum ditugaskan
+                            @endif
+                            </td>
                             <td>{{$order ->progressOrder}}%</td>
                         </tr>
                     @endforeach 

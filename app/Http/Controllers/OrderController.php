@@ -52,10 +52,6 @@ class OrderController extends Controller
         $order = new Order;
         $accounting = new Accounting;
         $karyawan = new Karyawan;
-        $jenis_order = new JenisOrder;
-
-        $jenis_order->jenisOrder = $request->jenisOrder; //akan berubah. seharusnya primary key ini di assign di page lain
-        $jenis_order->save();       //memasukkan ke database
 
         $order->namaOrder = $request->namaOrder;
         $order->deadlineOrder = $request->deadlineOrder;
