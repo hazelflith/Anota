@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Karyawan;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Karyawan;
 
@@ -20,7 +21,10 @@ class KaryawanController extends Controller
     
     public function index()
     {
-        $karyawans = Karyawan::all();
+        $karyawans = DB::table('karyawans')
+                    ->join('progress_karyawans','karyawans.idKaryawan','=','progress_karyawans.idKaryawan')
+                    ->select('karyawans.namaKaryawan','progress_karyawans.*')
+                    ->get();
         return view('karyawan.index',['karyawans' => $karyawans]);
     }
 

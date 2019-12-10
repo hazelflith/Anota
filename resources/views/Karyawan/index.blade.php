@@ -17,6 +17,7 @@
                     <thead class="thead-dark customtitle">
                     <tr>
                         <th scope="col">Nama Karyawan</th>
+                        <th scope="col">PIC dari</th>
                         <th scope="col">Waktu Tenggat Kerjaan</th>
                         <th scope="col">Status Kerjaan</th>
                         <th scope="col">Uang Pegangan</th>
@@ -30,8 +31,9 @@
                         <td>Belum Ditugaskan</td>
                         <td>Belum Ditugaskan</td>
                         <td>Belum Ditugaskan</td>
+                        <td>Belum Ditugaskan</td>
                         <td>BARPROGRESS1</td>
-                        <td><a class="btn btn-success" href="karyawan/assign/{{$karyawan->idKaryawan}}">Assign</a> <a class="btn btn-danger" href="karyawan/delete/{{$karyawan->idKaryawan}}">Delete</a></td>
+                        <td><a class="btn btn-success" href="/karyawan/assign/{{$karyawan->idKaryawan}}">Assign</a> <a class="btn btn-danger" href="karyawan/delete/{{$karyawan->idKaryawan}}">Delete</a></td>
                     </tr>
                     @endforeach
                     </tbody>

@@ -59,7 +59,7 @@ class OrderController extends Controller
 
         $order->namaOrder = $request->namaOrder;
         $order->deadlineOrder = $request->deadlineOrder;
-        $order->karyawanPekerjaOrder = 2; //karena belum tau cara assign banyak karyawan untuk 1 order;
+        $order->karyawanPekerjaOrder = $request->karyawanPekerjaOrder;
         $order->progressOrder = 0;
         $order->jenisOrder = $request->jenisOrder;
         $order->save();

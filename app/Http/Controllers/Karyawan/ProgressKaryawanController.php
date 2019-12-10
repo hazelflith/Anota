@@ -1,94 +1,36 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Karyawan;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Karyawan;
+use App\ProgressKaryawan;
 
 class ProgressKaryawanController extends Controller
 {
-    /**
-     * Create a new controller instance. Page hanya bisa diakses ketika sudah login
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+
+    public function edit($idKaryawan){
+        $karyawan = Karyawan::find($idKaryawan);
+        return view('karyawan.assign',['karyawan' => $karyawan]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    //assign pekerjaan seorang karyawan
+    public function assign(Request $request, $idKaryawan){
+        $progressKaryawan = new ProgressKaryawan;
+        
+        $progressKaryawan->idKaryawan = $idKaryawan;
+        $progressKaryawan->idOrder = $request->idOrder;
+        $progressKaryawan->deadlineKaryawan = $request->deadlineKaryawan;
+        $progressKaryawan->uangPegangan = $request->uangPegangan;
+        $progressKaryawan->progressKerjaan = 0;
+        $progressKaryawan->statusKerjaan = NULL;
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        $progressKaryawan->save();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        return redirect('/karyawan');
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 }
