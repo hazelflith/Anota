@@ -27,7 +27,12 @@
                             <td>{{$keuangan -> jenisOrder}}</td>
                             <td>{{$keuangan -> deadlineOrder}}</td>
                             <td>{{number_format($keuangan -> biayaMasuk)}}</td>    
-                            <td>IMAGE123</td>   <!-- Belum ada database untuk nota -->
+                            <td>
+                                <div class="upload-btn-wrapper1">
+                                    <button class="btn1" >+</button>
+                                    <input type="file" name="myfile" onchange="form.submit()"/>
+                                </div>
+                            </td>   <!-- Belum ada database untuk nota -->
                             <td>{{$keuangan -> biayaMasuk}}/{{number_format($keuangan -> priceOrder)}}</td> 
                         </tr>
                     @endforeach
