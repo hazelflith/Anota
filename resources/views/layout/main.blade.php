@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/animate.css">
     <title>@yield('title')</title>
   </head>
-  <body background="/assets/bg/background.png">
+  <body style="background-color:#c0f0ff">
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
     <div class="container">
         <a class="navbar-brand" href="/user" style="@yield('status0')">
