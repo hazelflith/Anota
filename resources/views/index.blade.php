@@ -7,11 +7,11 @@
 <link href="/css/beranda.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/animate.css">
     <div class="col-md-12 div-flex center">
-        <div class="align-left div-left">
+        <div class=" col-6 align-left div-left">
             <div class="h1 font-weight-normal title animated slideInLeft slow">Anota</div>
             <div class="h5 font-weight-normal subtitle animated slideInLeft delay-02s slow">Asisten Notaris Anda</div>
         </div>
-        <div class="div-right">
+        <div class="col-6 div-right">
             <div><img class="container-a animated slideInRight slow" src="/assets/bg/home/container.png"></div>
             <div><img class="container-b animated slideInRight slow" src="/assets/bg/home/container.png"></div>
         </div>
