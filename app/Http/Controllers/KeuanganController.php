@@ -39,16 +39,6 @@ class KeuanganController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -76,9 +66,10 @@ class KeuanganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function pembayaran($idAccounting)
     {
-        //
+        $accounting = Accounting::find($idAccounting);
+        return view('keuangan.pembayaran',['accounting' => $accounting]);
     }
 
     /**
@@ -88,9 +79,14 @@ class KeuanganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updatepembayaran(Request $request, $idAccounting)
     {
-        //
+        $accounting = Accounting::find($idAccounting);
+
+        $accounting->biayaMasuk = $request->biayaMasuk;
+        $accounting->save();
+
+        return redirect('keuangan');
     }
 
     /**

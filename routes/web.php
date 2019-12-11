@@ -35,4 +35,9 @@ Route::get('/karyawan/detail/{idKaryawan}','Karyawan\KaryawanController@show');
 //Untuk upload
 Route::post('/keuangan/upload','KeuanganUploadController@proses_upload');
 
+//Keuangan
+Route::get('/keuangan/bayar/{idAccounting}','KeuanganController@pembayaran');
+Route::post('/keuangan/bayar/{idAccounting}','KeuanganController@updatepembayaran');
+
+
 

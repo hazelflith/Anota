@@ -34,8 +34,8 @@
                                         <input type="file" id="file">
                                 </form>
                             </td>   <!-- Belum ada database untuk nota -->
-                            <td>Rp. {{$keuangan -> biayaMasuk}} / Rp. {{number_format($keuangan -> priceOrder)}}</td> 
-                            <td><a class="btn btn-success" style="color:white">+</a></td>
+                            <td>Rp. {{number_format($keuangan -> biayaMasuk)}} / Rp. {{number_format($keuangan -> priceOrder)}}</td> 
+                            <td><a class="btn btn-success" style="color:white" href="/keuangan/bayar/{{$keuangan->idAccounting}}">+</a></td>
                         </tr>
                     @endforeach
                     </tbody>
