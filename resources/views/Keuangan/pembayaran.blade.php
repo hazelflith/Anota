@@ -22,7 +22,7 @@
         <form action="" method="POST">
             @csrf
             <div class="form-group">
-                <input type="text" name="biayaMasuk" class="form-control mt-3">
+                <input type="text" name="biayaMasuk" class="form-control mt-3" autocomplete="off">
             </div>
             <div class="text-center">
                 <button type="submit" name="submit" class="btn btn-primary">Bayar</button>

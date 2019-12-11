@@ -17,7 +17,7 @@
         @csrf
             <div class="form-group col-4">
                 <label for="namaOrder">Nama Project</label>
-                <input type="text" name="namaOrder" class="form-control" id="namaOrder" placeholder="Masukkan nama project" required>
+                <input type="text" name="namaOrder" class="form-control" id="namaOrder" placeholder="Masukkan nama project" autocomplete="off" required>
             </div>
             <div class="form-group col-4">
                 <label for="jenisOrder">Jenis Kerjaan</label>
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group col-4">
                 <label for="priceOrder">Biaya</label>
-                <input type="text" name ="priceOrder" class="form-control" id="priceOrder" placeholder="Masukkan biaya" required>
+                <input type="text" name ="priceOrder" class="form-control" id="priceOrder" placeholder="Masukkan biaya" autocomplete="off" required>
             </div>
             <div class="form-group col-4">
                 <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>
