@@ -8,7 +8,7 @@
 <link href="/css/table.css" rel="stylesheet">
     <div class="container">
         <div class="row">
-            <div class="col-10 table1 rounded animated zoomIn faster">
+            <div class="col-10 table1 rounded animated zoomIn faster mb-5">
                 <div class="row justify-content-between">
                 <div class="col-4"><h1 class="mt-2 heading1">Karyawan Anda</h1></div>
                 <div class="col-4"><a href="karyawan/create" class="mt-2 btn btn-primary float-right">Input</a></div>

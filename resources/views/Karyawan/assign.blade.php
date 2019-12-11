@@ -33,7 +33,7 @@
             </div>            
             <div class="form-group col-4">
                 <label for="uangPegangan">Uang Pegangan</label>
-                <input type="text" value="0" name="uangPegangan" class="form-control" id="uangPegangan" required>
+                <input type="text" value="0" name="uangPegangan" class="form-control" id="uangPegangan" required autocomplete="off">
             </div>            
             <div class="form-group col-4">
                 <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>

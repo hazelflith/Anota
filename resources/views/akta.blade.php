@@ -64,7 +64,7 @@
                 </div>
             </div>  
         </div>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-4"style="padding-top:30px">
                 <div class="card">
                 <img src="/assets/img/docx-placeholder.png" alt="Avatar" style="width:100%">
