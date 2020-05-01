@@ -28,7 +28,6 @@ class KaryawanController extends Controller
                     ->join('orders','progress_karyawans.idOrder','=','orders.idOrder')
                     ->select('karyawans.namaKaryawan','progress_karyawans.*','orders.namaOrder')
                     ->get();
-
         return view('karyawan.index',['karyawans' => $karyawans]);
     }
 

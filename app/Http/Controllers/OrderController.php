@@ -76,9 +76,22 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($idOrder)
     {
-        //
+        $orders = Order::find($idOrder);
+        $progress_karyawans = DB::table('progress_karyawans')
+                                ->where('idOrder',$idOrder)
+                                ->join('karyawans','progress_karyawans.idKaryawan','=','karyawans.idKaryawan')
+                                ->select('progress_karyawans.*','karyawans.namaKaryawan')
+                                ->get();
+        $notas = DB::table('notas')->where('idOrder',$idOrder)->get();
+        $accountings = DB::table('accountings')->where('idOrder',$idOrder)->first();
+        // dd($notas);
+        return view('order.detailOrder',[
+                    'orders'=>$orders,
+                    'progress_karyawans'=>$progress_karyawans,
+                    'notas'=>$notas,
+                    'accountings'=>$accountings]);
     }
 
     /**

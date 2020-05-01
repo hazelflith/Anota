@@ -34,7 +34,7 @@
 
                         <tr class="rowtable text-center">
                             <th scope='row'>{{$loop -> iteration}}</th>
-                            <td >{{$order ->namaOrder}}</td>
+                            <td><a href="/order/detail/{{$order ->idOrder}}">{{$order ->namaOrder}}</a></td>
                             <td>{{$order ->jenisOrder}}</td>
                             <td>{{$order ->deadlineOrder}}</td>
                             <td>Rp. {{number_format($order ->priceOrder)}}</td>
@@ -54,9 +54,9 @@
                 <div class="float-right">
                     {{$orders->links()}}
                 </div>
-               </div>
             </div>
         </div>
+    </div>
 @endsection
 
 

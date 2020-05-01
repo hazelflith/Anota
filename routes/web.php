@@ -21,6 +21,7 @@ Auth::routes();
 Route::get('/order','OrderController@index');
 Route::get('order/create','OrderController@create');
 Route::post('/order/create','OrderController@store');
+Route::get('/order/detail/{idOrder}','OrderController@show');
 
 //karyawan
 Route::get('/karyawan','Karyawan\KaryawanController@index');
