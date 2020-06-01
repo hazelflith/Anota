@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col mt-3">
                 
-                <h1>Nama : {{$karyawans->namaKaryawan}}</h1>
-                <h1>Email : {{$karyawans->emailKaryawan}}</h1>
+                <h1>Nama : {{$karyawans['namaKaryawan']}}</h1>
+                <h1>Email : {{$karyawans['emailKaryawan']}}</h1>
                 
             </div>
         </div>

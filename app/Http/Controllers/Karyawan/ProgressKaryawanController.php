@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Karyawan;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Karyawan;
 use App\ProgressKaryawan;
@@ -13,31 +13,32 @@ class ProgressKaryawanController extends Controller
 {
 
     public function edit($idKaryawan){
-        $karyawan = Karyawan::find($idKaryawan);
-        $orders = Order::all();
-        return view('karyawan.assign', compact('karyawan','orders'));
+        $requestKaryawan = Http::get('localhost:8080/api/karyawan/'.$idKaryawan);
+        $karyawan = json_decode($requestKaryawan);
+
+        $requestOrders = Http::get('localhost:8080/api/order');
+        $orders = json_decode($requestOrders);
+
+        return view('karyawan.assign', [
+            'karyawan' => $karyawan,
+            'orders' => $orders
+        ]);
     }
 
     //assign pekerjaan seorang karyawan
     public function assign(Request $request, $idKaryawan){
         
-        $progressKaryawan = ProgressKaryawan::find($idKaryawan);
-        
-        $progressKaryawan->idKaryawan = $idKaryawan;
-        $progressKaryawan->idOrder = $request->idOrder;
-        $progressKaryawan->deadlineKaryawan = $request->deadlineKaryawan;
-        $progressKaryawan->uangPegangan = $request->uangPegangan;
-        $progressKaryawan->progressKerjaan = 0;
-        $progressKaryawan->statusKerjaan = NULL;
-        $progressKaryawan->save();
+        $data = [
+            'idKaryawan' => $idKaryawan,
+            'idOrder' => $request->idOrder,
+            'deadlineKaryawan' => $request->deadlineKaryawan,
+            'uangPegangan' => $request->uangPegangan,
+            'namaPekerjaOrder' => $request->namaKaryawan,
+        ];
 
-        $order = Order::find($progressKaryawan->idOrder);
+        $response = Http::asForm()->post('localhost:8080/api/karyawan/assign/'.$idKaryawan, $data);
 
-        $order->karyawanPekerjaOrder = $idKaryawan;
-        $order->namaPekerjaOrder = $request->namaKaryawan;
-        $order->save();
-
-        return redirect('/karyawan');
+        return redirect('karyawan');
 
 
 

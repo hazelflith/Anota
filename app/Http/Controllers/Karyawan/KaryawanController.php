@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Karyawan;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\Controller;
 use App\Karyawan;
 use App\ProgressKaryawan;
@@ -23,11 +24,9 @@ class KaryawanController extends Controller
     
     public function index()
     {
-        $karyawans = DB::table('karyawans')
-                    ->join('progress_karyawans','karyawans.idKaryawan','=','progress_karyawans.idKaryawan')
-                    ->join('orders','progress_karyawans.idOrder','=','orders.idOrder')
-                    ->select('karyawans.namaKaryawan','progress_karyawans.*','orders.namaOrder')
-                    ->get();
+        $response = Http::get('localhost:8080/api/karyawan');
+        $karyawans = json_decode($response, true);
+
         return view('karyawan.index',['karyawans' => $karyawans]);
     }
 
@@ -49,23 +48,14 @@ class KaryawanController extends Controller
      */
     public function store(Request $request)
     {
-        $karyawan = new Karyawan;
+        $data = [
+            'namaKaryawan' => $request->namaKaryawan,
+            'emailKaryawan' => $request->emailKaryawan,
+        ];
 
-        $karyawan->namaKaryawan = $request->namaKaryawan;
-        $karyawan->emailKaryawan = $request->emailKaryawan;
-        $karyawan->save();
+        $response = Http::asForm()->post('http://localhost:8080/api/karyawan', $data);
 
-        $progressKaryawan = new ProgressKaryawan; //dibuat banyak null untuk abstract supaya bisa join
-
-        $progressKaryawan->idKaryawan = $karyawan->idKaryawan;
-        $progressKaryawan->idOrder = 5869; //id untuk yang belum ditugaskan
-        $progressKaryawan->deadlineKaryawan = NULL;
-        $progressKaryawan->uangPegangan = NULL;
-        $progressKaryawan->progressKerjaan = 0;
-        $progressKaryawan->statusKerjaan = NULL;
-
-        $progressKaryawan->save();
-
+        
         return redirect('karyawan');
     }
 
@@ -77,8 +67,9 @@ class KaryawanController extends Controller
      */
     public function show($idKaryawan)
     {
-        $karyawans = Karyawan::find($idKaryawan);
-
+        $response = Http::get('localhost:8080/api/karyawan/'.$idKaryawan);
+        $karyawans = json_decode($response, true);
+        
         return view('karyawan.detailKaryawan',['karyawans'=>$karyawans]);
     }
 
