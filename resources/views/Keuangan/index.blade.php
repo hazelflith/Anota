@@ -4,6 +4,7 @@
 @section('status4', 'color:#FF8787')
 
 @section('container')
+
 <!-- Custom styles for this template -->
 <link href="/css/table.css" rel="stylesheet">
     <div class="container">
@@ -24,18 +25,18 @@
                     <tbody>
                     @foreach ($keuangans as $keuangan)
                         <tr class="rowtable text-center">
-                            <th scope='row'>{{$keuangan -> namaOrder}}</th>
-                            <td>{{$keuangan -> jenisOrder}}</td>
-                            <td>{{$keuangan -> deadlineOrder}}</td>
-                            <td>Rp. {{number_format($keuangan -> biayaMasuk)}}</td>    
+                            <th scope='row'>{{$keuangan ['namaOrder']}}</th>
+                            <td>{{$keuangan ['jenisOrder']}}</td>
+                            <td>{{$keuangan ['deadlineOrder']}}</td>
+                            <td>Rp. {{number_format($keuangan ['biayaMasuk'])}}</td>    
                             <td>
                                 <form style="margin:0" action="/keuangan/upload" method="POST" enctype="multipart/form-data">
                                         <label style="margin:0" class="btn btn-primary" for="file">+</label>
                                         <input type="file" id="file">
                                 </form>
                             </td>   <!-- Belum ada database untuk nota -->
-                            <td>Rp. {{number_format($keuangan -> biayaMasuk)}} / Rp. {{number_format($keuangan -> priceOrder)}}</td> 
-                            <td><a class="btn btn-success" style="color:white" href="/keuangan/bayar/{{$keuangan->idAccounting}}">+</a></td>
+                            <td>Rp. {{number_format($keuangan ['biayaMasuk'])}} / Rp. {{number_format($keuangan ['priceOrder'])}}</td> 
+                            <td><a class="btn btn-success" style="color:white" href="/keuangan/bayar/{{$keuangan['idAccounting']}}">+</a></td>
                         </tr>
                     @endforeach
                     </tbody>

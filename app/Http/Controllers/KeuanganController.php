@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use App\Order;
 use App\Karyawan;
 use App\Accounting;
@@ -30,10 +31,8 @@ class KeuanganController extends Controller
 
     public function index()
     {
-        $keuangan = DB::table('orders')
-                ->join('accountings','orders.idOrder','=','accountings.idOrder')
-                ->select('orders.*','accountings.*')
-                ->paginate(10);
+        $response = Http::get('localhost:8080/api/keuangan');
+        $keuangan = json_decode($response, true);
         
         return view('keuangan.index',['keuangans' => $keuangan]);
     }
@@ -66,10 +65,9 @@ class KeuanganController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function pembayaran($idAccounting)
+    public function pembayaran()
     {
-        $accounting = Accounting::find($idAccounting);
-        return view('keuangan.pembayaran',['accounting' => $accounting]);
+        return view('keuangan.pembayaran');
     }
 
     /**
@@ -80,12 +78,14 @@ class KeuanganController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function updatepembayaran(Request $request, $idAccounting)
-    {
-        $accounting = Accounting::find($idAccounting);
+    {  
+        $data = [
+            'biayaMasuk' => $request->biayaMasuk,
+        ];
 
-        $accounting->biayaMasuk = $request->biayaMasuk;
-        $accounting->save();
+        $response = Http::asForm()->post('localhost:8080/api/keuangan/bayar/'.$idAccounting, $data);
 
+        
         return redirect('keuangan');
     }
 
