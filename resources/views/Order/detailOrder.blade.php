@@ -18,7 +18,7 @@
             </a>
           </div>
           <div class="col-10 align-middle">
-            <h1>{{$orders ->namaOrder}}</h1>
+            <h1>{{$orders ['namaOrder']}}</h1>
           </div>
 
           <div class="container row">
@@ -27,17 +27,17 @@
                 <tr>
                   <th scope="row">Jenis Pekerjaan</th>
                   <td>&nbsp;:&nbsp;</td>
-                  <td>{{$orders->jenisOrder}}</td>
+                  <td>{{$orders['jenisOrder']}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Waktu Tenggat</th>
                   <td>&nbsp;:&nbsp;</td>
-                  <td>{{$orders->deadlineOrder}}</td>
+                  <td>{{$orders['deadlineOrder']}}</td>
                 </tr>
                 <tr>
                   <th scope="row">Biaya</th>
                   <td>&nbsp;:&nbsp;</td>
-                  <td>Rp. {{number_format($accountings->priceOrder)}}</td>
+                  <td>Rp. {{number_format($accountings['priceOrder'])}}</td>
                 </tr>
                 <tr>
                   <th scope="row" class="align-top">Karyawan</th>
@@ -49,15 +49,15 @@
                           <td rowspan="3">
                             FOTO
                           </td>
-                          <th class="tdgap" scope="row">Nama : {{$progress_karyawan->namaKaryawan}}</th>
+                          <th class="tdgap" scope="row">Nama : {{$progress_karyawan['namaKaryawan']}}</th>
                         </tr>
                           <td class="tdgap">
-                            @if ($progress_karyawan->statusKerjaan == NULL)
+                            @if ($progress_karyawan['statusKerjaan'] == NULL)
                               -
                             @endif
                           </td>
                         <tr>
-                          <td class="tdgap">Uang Pegangan : Rp. {{number_format($progress_karyawan->uangPegangan)}}</td>
+                          <td class="tdgap">Uang Pegangan : Rp. {{number_format($progress_karyawan['uangPegangan'])}}</td>
                         </tr>
                       </table>
                     @endforeach
@@ -71,7 +71,7 @@
                 <tr>
                   <th scope="row" class="tdwrap">Biaya yang Sudah Masuk</th>
                   <td class="tdwrap">&nbsp;:&nbsp;</td>
-                  <td>Rp. {{number_format($accountings->biayaMasuk)}}</td>
+                  <td>Rp. {{number_format($accountings['biayaMasuk'])}}</td>
                 </tr>
                 <tr>
                   <th scope="row" class="tdwrap">Nota</th>
@@ -85,7 +85,7 @@
                   <td class="tdwrap">&nbsp;:&nbsp;</td>
                   <td class="progressw">
                     <div class="progress">
-                      <div class="progress-bar bg-danger w-{{$orders->progressOrder}}%" role="progressbar" aria-valuenow="{{$orders->progressOrder}}%" aria-valuemin="0" aria-valuemax="100">{{$orders->progressOrder}}%</div>
+                      <div class="progress-bar bg-danger w-{{$orders['progressOrder']}}%" role="progressbar" aria-valuenow="{{$orders['progressOrder']}}%" aria-valuemin="0" aria-valuemax="100">{{$orders['progressOrder']}}%</div>
                     </div>
                   </td>
                 </tr>

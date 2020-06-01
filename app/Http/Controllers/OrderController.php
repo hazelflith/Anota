@@ -78,20 +78,16 @@ class OrderController extends Controller
      */
     public function show($idOrder)
     {
-        $orders = Order::find($idOrder);
-        $progress_karyawans = DB::table('progress_karyawans')
-                                ->where('idOrder',$idOrder)
-                                ->join('karyawans','progress_karyawans.idKaryawan','=','karyawans.idKaryawan')
-                                ->select('progress_karyawans.*','karyawans.namaKaryawan')
-                                ->get();
-        $notas = DB::table('notas')->where('idOrder',$idOrder)->get();
-        $accountings = DB::table('accountings')->where('idOrder',$idOrder)->first();
-        // dd($notas);
+       $request = Http::get('localhost:8080/api/order/'.$idOrder);
+       $data = json_decode($request, true);
+
+       
         return view('order.detailOrder',[
-                    'orders'=>$orders,
-                    'progress_karyawans'=>$progress_karyawans,
-                    'notas'=>$notas,
-                    'accountings'=>$accountings]);
+                    'orders'=>$data['orders'],
+                    'progress_karyawans'=>$data['progress_karyawans'],
+                    'notas'=>$data['notas'],
+                    'accountings'=>$data['accountings'],
+                    ]);
     }
 
     /**
