@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use App\Order;
 use App\Karyawan;
 use App\Accounting;
@@ -23,11 +24,9 @@ class OrderController extends Controller
     
     public function index()
     {
-        $orders = DB::table('orders')
-                ->join('accountings','orders.idOrder','=','accountings.idOrder')
-                ->select('orders.*','accountings.priceOrder')
-                ->paginate(10);
-
+        $response = Http::get('localhost:8080/api/order');
+        $orders = json_decode($response);
+        
         return view('order.index',['orders'=> $orders]);
     }
 
