@@ -25,7 +25,7 @@ class OrderController extends Controller
     public function index()
     {
         $response = Http::get('localhost:8080/api/order');
-        $orders = json_decode($response);
+        $orders = json_decode($response, true);
         
         return view('order.index',['orders'=> $orders]);
     }
@@ -37,7 +37,9 @@ class OrderController extends Controller
      */
     public function create()
     {   
-        $jenisOrders = DB::table('jenis_orders')->get();
+        $response = Http::get('localhost:8080/api/jenisOrder');
+        $jenisOrders = json_decode($response, true);
+        
         return view('order.create', ['jenisOrders' => $jenisOrders]);
     }
 
@@ -49,24 +51,23 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $order = new Order;
-        $accounting = new Accounting;
-        $karyawan = new Karyawan;
+        $data = [
+            'namaOrder' => $request->namaOrder,
+            'deadlineOrder' => $request->deadlineOrder,
+            'karyawanPekerjaOrder' => NULL,
+            'progressOrder' => 0,
+            'jenisOrder' => $request->jenisOrder,
+            'priceOrder' => $request->priceOrder,
+            'biayaSisa'=> $request->priceOrder,
+            'biayaMasuk' => 0,
+        ];
 
-        $order->namaOrder = $request->namaOrder;
-        $order->deadlineOrder = $request->deadlineOrder;
-        $order->karyawanPekerjaOrder = NULL;
-        $order->progressOrder = 0;
-        $order->jenisOrder = $request->jenisOrder;
-        $order->save();
+        $request = Http::asForm()->post('localhost:8080/api/order', $data);
 
-        $accounting->priceOrder = $request->priceOrder;
-        $accounting->biayaSisa = $request->priceOrder;
-        $accounting->biayaMasuk = 0;
-        $accounting->idOrder = $order->idOrder;
-        $accounting->save();
-
-        return redirect('order');
+        if($request->successful())
+        return redirect('order')->with('message', 'Data Berhasil Dimasukkan!');
+        else
+        return redirect('order')->with('message', 'Error saat memasukkan data');
     }
 
     /**

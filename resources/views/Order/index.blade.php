@@ -13,7 +13,7 @@
                     <div class="col-4"><h1 class="mt-2 heading1">Orderan Anda</h1></div>
                     <div class="col-4"><a href="order/create" class="mt-2 btn btn-primary float-right">Input</a></div>
                 </div>
-
+            
                 <table class="table">
                     <thead class="thead-dark customtitle">
                     <tr class="text-center">
@@ -28,31 +28,31 @@
                     <tbody>
                       @foreach ($orders as $order)
 
-                        @if ($order->idOrder == 5869) <!--Menghindari id abstract untuk di tampilkan-->
+                        @if ($order['idOrder'] == 5869) <!--Menghindari id abstract untuk di tampilkan-->
                             @continue
                         @endif
 
                         <tr class="rowtable text-center">
                             <th scope='row'>{{$loop -> iteration}}</th>
-                            <td><a href="/order/detail/{{$order ->idOrder}}">{{$order ->namaOrder}}</a></td>
-                            <td>{{$order ->jenisOrder}}</td>
-                            <td>{{$order ->deadlineOrder}}</td>
-                            <td>Rp. {{number_format($order ->priceOrder)}}</td>
+                            <td><a href="/order/detail/{{$order['idOrder']}}">{{$order['namaOrder']}}</a></td>
+                            <td>{{$order['jenisOrder']}}</td>
+                            <td>{{$order['deadlineOrder']}}</td>
+                            <td>Rp. {{number_format($order['priceOrder'])}}</td>
                             <td>
-                                @if ($order->namaPekerjaOrder != NULL)
-                                {{$order->namaPekerjaOrder}}
+                                @if ($order['namaPekerjaOrder'] != NULL)
+                                {{$order['namaPekerjaOrder']}}
                                 @else
                                 Belum ditugaskan
                                 @endif
                             </td>
-                            <td>{{$order ->progressOrder}}%</td>
+                            <td>{{$order['progressOrder']}}%</td>
                         </tr>
                     @endforeach 
                     </tbody>
                     </thead>
                 </table>
                 <div class="float-right">
-                    {{$orders->links()}}
+                    
                 </div>
             </div>
         </div>

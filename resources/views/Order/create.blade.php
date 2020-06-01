@@ -23,7 +23,7 @@
                 <label for="jenisOrder">Jenis Kerjaan</label>
                 <select name="jenisOrder" id="jenisOrder" class="form-control">
                     @foreach ($jenisOrders as $jenis_Order)
-                        <option value="{{$jenis_Order->jenisOrder}}">{{$jenis_Order->jenisOrder}}</option>
+                        <option value="{{$jenis_Order['jenisOrder']}}">{{$jenis_Order['jenisOrder']}}</option>
                     @endforeach
                 </select>
             </div>
