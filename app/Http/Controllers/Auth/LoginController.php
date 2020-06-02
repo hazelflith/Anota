@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -35,5 +38,20 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request){
+        $data = [
+            'email' => $request->email,
+            'password' => $request->password
+        ];
+
+        $response = Http::asForm()->post('localhost:8080/api/login', $data);
+
+        if($response->successful()){
+            echo "Success";
+            return redirect('/');}
+        else
+            redirect('/');
     }
 }

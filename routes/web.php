@@ -15,7 +15,6 @@ Route::get('/','HomeController@beranda')->name('default');
 Route::get('/keuangan','KeuanganController@index');
 Route::get('/akta','PagesController@akta');
 Route::get('/user','PagesController@user');
-Auth::routes();
 
 //order
 Route::get('/order','OrderController@index');
@@ -34,11 +33,18 @@ Route::get('/karyawan/detail/{idKaryawan}','Karyawan\KaryawanController@show');
     Route::post('/karyawan/assign/{idKaryawan}','Karyawan\ProgressKaryawanController@assign');
 
 //Untuk upload
-Route::post('/keuangan/upload','KeuanganUploadController@proses_upload');
+//Route::post('/keuangan/upload','KeuanganUploadController@proses_upload');
 
 //Keuangan
 Route::get('/keuangan/bayar/{idAccounting}','KeuanganController@pembayaran');
 Route::post('/keuangan/bayar/{idAccounting}','KeuanganController@updatepembayaran');
 
+//auth
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\RegisterController@register');
+
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 
