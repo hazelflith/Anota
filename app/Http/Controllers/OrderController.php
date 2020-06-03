@@ -36,7 +36,7 @@ class OrderController extends Controller
         $response = Http::get('https://apianota.herokuapp.com/api/jenisOrder');
         $jenisOrders = json_decode($response, true);
         
-        return view('Order.create', ['jenisOrders' => $jenisOrders]);
+        return view('order.create', ['jenisOrders' => $jenisOrders]);
     }
 
     /**
