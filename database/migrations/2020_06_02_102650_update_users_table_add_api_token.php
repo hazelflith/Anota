@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNullableToKaryawanPekerjaOrderFromOrders extends Migration
+class UpdateUsersTableAddApiToken extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddNullableToKaryawanPekerjaOrderFromOrders extends Migration
      */
     public function up()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->bigInteger('karyawanPekerjaOrder')->unsigned()->nullable()->change();
-           });
+        Schema::table('users', function (Blueprint $table) {
+           $table->string('api_token')->after('email');
+        });
     }
 
     /**
@@ -25,8 +25,8 @@ class AddNullableToKaryawanPekerjaOrderFromOrders extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            //
-        });
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('api_token');
+         });
     }
 }
