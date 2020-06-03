@@ -46,7 +46,7 @@ class LoginController extends Controller
             'password' => $request->password
         ];
 
-        $response = Http::asForm()->post('localhost:8080/api/login', $data);
+        $response = Http::asForm()->post('https://apianota.herokuapp.com/api/login', $data);
 
         if($response->successful()){
             echo "Success";

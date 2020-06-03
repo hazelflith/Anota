@@ -20,7 +20,7 @@ class OrderController extends Controller
     
     public function index()
     {
-        $response = Http::get('localhost:8080/api/order');
+        $response = Http::get('https://apianota.herokuapp.com/api/order');
         $orders = json_decode($response, true);
         
         return view('order.index',['orders'=> $orders]);
@@ -33,7 +33,7 @@ class OrderController extends Controller
      */
     public function create()
     {   
-        $response = Http::get('localhost:8080/api/jenisOrder');
+        $response = Http::get('https://apianota.herokuapp.com/api/jenisOrder');
         $jenisOrders = json_decode($response, true);
         
         return view('order.create', ['jenisOrders' => $jenisOrders]);
@@ -58,7 +58,7 @@ class OrderController extends Controller
             'biayaMasuk' => 0,
         ];
 
-        $request = Http::asForm()->post('localhost:8080/api/order', $data);
+        $request = Http::asForm()->post('https://apianota.herokuapp.com/api/order', $data);
 
         if($request->successful())
         return redirect('order')->with('message', 'Data Berhasil Dimasukkan!');
@@ -74,7 +74,7 @@ class OrderController extends Controller
      */
     public function show($idOrder)
     {
-       $request = Http::get('localhost:8080/api/order/'.$idOrder);
+       $request = Http::get('https://apianota.herokuapp.com/api/order/'.$idOrder);
        $data = json_decode($request, true);
 
        

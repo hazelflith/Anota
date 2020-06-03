@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
-        $response = Http::asForm()->post('http://localhost:8080/api/register', $data);
+        $response = Http::asForm()->post('https://apianota.herokuapp.com/api/register', $data);
         
         $user = json_decode($response, true);
 

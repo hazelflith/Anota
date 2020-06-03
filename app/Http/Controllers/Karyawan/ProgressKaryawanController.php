@@ -13,10 +13,10 @@ class ProgressKaryawanController extends Controller
 {
 
     public function edit($idKaryawan){
-        $requestKaryawan = Http::get('localhost:8080/api/karyawan/'.$idKaryawan);
+        $requestKaryawan = Http::get('https://apianota.herokuapp.com/api/karyawan/'.$idKaryawan);
         $karyawan = json_decode($requestKaryawan);
 
-        $requestOrders = Http::get('localhost:8080/api/order');
+        $requestOrders = Http::get('https://apianota.herokuapp.com/api/order');
         $orders = json_decode($requestOrders);
 
         return view('karyawan.assign', [
@@ -36,7 +36,7 @@ class ProgressKaryawanController extends Controller
             'namaPekerjaOrder' => $request->namaKaryawan,
         ];
 
-        $response = Http::asForm()->post('localhost:8080/api/karyawan/assign/'.$idKaryawan, $data);
+        $response = Http::asForm()->post('https://apianota.herokuapp.com/api/karyawan/assign/'.$idKaryawan, $data);
 
         return redirect('karyawan');
 

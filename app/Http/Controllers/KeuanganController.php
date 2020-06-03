@@ -26,7 +26,7 @@ class KeuanganController extends Controller
 
     public function index()
     {
-        $response = Http::get('localhost:8080/api/keuangan');
+        $response = Http::get('https://apianota.herokuapp.com/api/keuangan');
         $keuangan = json_decode($response, true);
         
         return view('keuangan.index',['keuangans' => $keuangan]);
@@ -78,7 +78,7 @@ class KeuanganController extends Controller
             'biayaMasuk' => $request->biayaMasuk,
         ];
 
-        $response = Http::asForm()->post('localhost:8080/api/keuangan/bayar/'.$idAccounting, $data);
+        $response = Http::asForm()->post('https://apianota.herokuapp.com/api/keuangan/bayar/'.$idAccounting, $data);
 
         
         return redirect('keuangan');

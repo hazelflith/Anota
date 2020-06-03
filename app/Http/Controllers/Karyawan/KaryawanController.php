@@ -20,7 +20,7 @@ class KaryawanController extends Controller
     
     public function index()
     {
-        $response = Http::get('localhost:8080/api/karyawan');
+        $response = Http::get('https://apianota.herokuapp.com/api/karyawan');
         $karyawans = json_decode($response, true);
 
         return view('karyawan.index',['karyawans' => $karyawans]);
@@ -49,7 +49,7 @@ class KaryawanController extends Controller
             'emailKaryawan' => $request->emailKaryawan,
         ];
 
-        $response = Http::asForm()->post('http://localhost:8080/api/karyawan', $data);
+        $response = Http::asForm()->post('https://apianota.herokuapp.com/api/karyawan', $data);
 
         
         return redirect('karyawan');
@@ -63,7 +63,7 @@ class KaryawanController extends Controller
      */
     public function show($idKaryawan)
     {
-        $response = Http::get('localhost:8080/api/karyawan/'.$idKaryawan);
+        $response = Http::get('https://apianota.herokuapp.com/api/karyawan/'.$idKaryawan);
         $karyawans = json_decode($response, true);
         
         return view('karyawan.detailKaryawan',['karyawans'=>$karyawans]);
