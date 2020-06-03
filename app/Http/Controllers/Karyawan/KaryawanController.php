@@ -100,9 +100,8 @@ class KaryawanController extends Controller
      */
     public function destroy($idKaryawan)
     {
-        $karyawan = Karyawan::find($idKaryawan);
-        $karyawan->delete();
-        
+        $reponse = Http::delete('https://apianota.herokuapp.com/api/karyawan/'.$idKaryawan);
+            
         return redirect('karyawan');
     }
 }
